@@ -1,0 +1,63 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find the longest repeating sequence in a string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < vector.h>
+                
+                std::string longest_repeating_sequence(const std::string& str) {
+                    int n = str.length();
+                    std::vector< std::vector< int>> dp(n + 1, std::vector< int>(n + 1, 0));
+                
+                    int max_length = 0;
+                    int end_index = 0;
+                
+                    for (int i = 1; i <= n; ++i) {
+                        for (int j = i + 1; j <= n; ++j) {
+                            if (str[i - 1] == str[j - 1] && dp[i - 1][j - 1] < (j - i)) {
+                                dp[i][j] = dp[i - 1][j - 1] + 1;
+                
+                                if (dp[i][j] > max_length) {
+                                    max_length = dp[i][j];
+                                    end_index = i - 1;
+                                }
+                            } else {
+                                dp[i][j] = 0;
+                            }
+                        }
+                    }
+                
+                    if (max_length > 0) {
+                        return str.substr(end_index - max_length + 1, max_length);
+                    } else {
+                        return "No repeating sequence found.";
+                    }
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::cin >> input_string;
+                
+                    // Find the longest repeating sequence
+                    std::string longest_sequence = longest_repeating_sequence(input_string);
+                
+                    // Output result
+                    std::cout << "Longest repeating sequence: " << longest_sequence << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: icecream
+            Longest repeating sequence: c      
+        </pre>
+    </body>
+</html>

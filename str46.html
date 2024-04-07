@@ -1,0 +1,49 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to compute the future investment value at a given interest rate for a specified number of years:</h2>
+        <pre>
+            #include < iostream>
+                #include < cmath>
+                
+                double calculateFutureValue(double investmentAmount, double annualInterestRate, int years) {
+                    // Convert annual interest rate to monthly interest rate
+                    double monthlyInterestRate = annualInterestRate / 100 / 12;
+                    
+                    // Calculate the future value using the compound interest formula
+                    double futureValue = investmentAmount * pow(1 + monthlyInterestRate, years * 12);
+                    
+                    return futureValue;
+                }
+                
+                int main() {
+                    double investmentAmount;
+                    double annualInterestRate;
+                    int years;
+                
+                    std::cout << "Enter the initial investment amount: ";
+                    std::cin >> investmentAmount;
+                
+                    std::cout << "Enter the annual interest rate (in percentage): ";
+                    std::cin >> annualInterestRate;
+                
+                    std::cout << "Enter the number of years: ";
+                    std::cin >> years;
+                
+                    double futureValue = calculateFutureValue(investmentAmount, annualInterestRate, years);
+                
+                    std::cout << "Future value after " << years << " years: $" << futureValue << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the initial investment amount: 12000
+            Enter the annual interest rate (in percentage): 3%
+            Enter the number of years: Future value after 0 years: $12000           
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find Reverse of the string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                
+                std::string reverse_string(const std::string& str) {
+                    std::string reversed_str;
+                    for (int i = str.length() - 1; i >= 0; --i) {
+                        reversed_str.push_back(str[i]);
+                    }
+                    return reversed_str;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Reverse the string
+                    std::string reversed_string = reverse_string(input_string);
+                
+                    // Output result
+                    std::cout << "Reverse of the string: " << reversed_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: the story
+            Reverse of the string: yrots eht       
+        </pre>
+    </body>
+</html>

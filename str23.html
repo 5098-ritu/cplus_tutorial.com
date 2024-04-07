@@ -1,0 +1,65 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find the largest and smallest word in a string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < sstream.h>
+                #include < vector.h>
+                #include < algorithm.h>
+                
+                void find_largest_smallest_word(const std::string& str) {
+                    // Tokenize the input string into words
+                    std::stringstream ss(str);
+                    std::string word;
+                    std::vector< std::string> words;
+                    while (ss >> word) {
+                        words.push_back(word);
+                    }
+                
+                    // Find the largest and smallest words
+                    std::string largest_word;
+                    std::string smallest_word;
+                
+                    if (!words.empty()) {
+                        largest_word = smallest_word = words[0];
+                
+                        for (const std::string& w : words) {
+                            if (w.length() > largest_word.length()) {
+                                largest_word = w;
+                            }
+                            if (w.length() < smallest_word.length()) {
+                                smallest_word = w;
+                            }
+                        }
+                    }
+                
+                    // Output result
+                    std::cout << "Largest word: " << largest_word << std::endl;
+                    std::cout << "Smallest word: " << smallest_word << std::endl;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Find largest and smallest words
+                    find_largest_smallest_word(input_string);
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: markise sunscreen
+            Largest word: sunscreen
+            Smallest word: markise      
+        </pre>
+    </body>
+</html>

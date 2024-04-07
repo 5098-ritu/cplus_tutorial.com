@@ -1,0 +1,44 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to count the total number of punctuation characters exists in a String:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < cctype.h>
+                
+                int count_punctuation(const std::string& str) {
+                    int punctuation_count = 0;
+                    for (char c : str) {
+                        if (std::ispunct(c)) {
+                            punctuation_count++;
+                        }
+                    }
+                    return punctuation_count;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Count punctuation characters
+                    int punctuation_count = count_punctuation(input_string);
+                
+                    // Output result
+                    std::cout << "Total number of punctuation characters in the string: " << punctuation_count << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: namastey India!
+            Total number of punctuation characters in the string: 1       
+        </pre>
+    </body>
+</html>

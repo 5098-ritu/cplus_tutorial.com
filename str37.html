@@ -1,0 +1,54 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to swap two string variables without using third or temp variable:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < algorithm>
+                
+                void swap_strings(std::string& str1, std::string& str2) {
+                    // Append the second string to the first string
+                    str1 += str2;
+                
+                    // Get the length of the first string
+                    size_t length_str1 = str1.length();
+                
+                    // Extract the original second string from the first string
+                    str2 = str1.substr(0, length_str1 - str2.length());
+                
+                    // Extract the original first string from the combined string
+                    str1 = str1.substr(str2.length());
+                }
+                
+                int main() {
+                    std::string str1, str2;
+                
+                    // Input strings
+                    std::cout << "Enter the first string: ";
+                    std::getline(std::cin, str1);
+                    std::cout << "Enter the second string: ";
+                    std::getline(std::cin, str2);
+                
+                    // Swap the strings
+                    swap_strings(str1, str2);
+                
+                    // Output result
+                    std::cout << "After swapping:" << std::endl;
+                    std::cout << "First string: " << str1 << std::endl;
+                    std::cout << "Second string: " << str2 << std::endl;
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the first string: the tej mahal
+            Enter the second string: is beautiful
+            After swapping:
+            First string: is beautiful
+            Second string: the tej mahal      
+        </pre>
+    </body>
+</html>

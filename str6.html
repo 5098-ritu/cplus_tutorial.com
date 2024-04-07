@@ -1,0 +1,42 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Add Characters to a String:</h2> 
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                
+                std::string add_characters(const std::string& input_string, const std::string& characters) {
+                    return input_string + characters;
+                }
+                
+                int main() {
+                    std::string input_string, characters_to_add;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Characters to add
+                    std::cout << "Enter characters to add: ";
+                    std::getline(std::cin, characters_to_add);
+                
+                    // Add characters
+                    std::string result_string = add_characters(input_string, characters_to_add);
+                
+                    // Output result
+                    std::cout << "Result String after adding characters: " << result_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: ramcharan 
+            Enter characters to add: e
+            Result String after adding characters: ramcharane       
+        </pre>
+    </body>
+</html>

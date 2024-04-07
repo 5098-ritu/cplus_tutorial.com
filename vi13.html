@@ -1,0 +1,77 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Bird with abstract methods fly() and makeSound(). Create derived classes Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound:</h2>
+        <pre>
+#include < iostream.h >
+#include < conio.h >
+// Abstract class Bird
+class Bird {
+public:
+    // Pure virtual function for flying
+    virtual void fly() = 0;
+    
+    // Pure virtual function for making sound
+    virtual void makeSound() = 0;
+};
+
+// Derived class Eagle
+class Eagle : public Bird {
+public:
+    // Implementation of fly method for Eagle
+    void fly() override {
+        std::cout << "Eagle flies high in the sky.\n";
+    }
+    
+    // Implementation of makeSound method for Eagle
+    void makeSound() override {
+        std::cout << "Eagle makes a screeching sound.\n";
+    }
+};
+
+// Derived class Hawk
+class Hawk : public Bird {
+public:
+    // Implementation of fly method for Hawk
+    void fly() override {
+        std::cout << "Hawk flies swiftly through the air.\n";
+    }
+    
+    // Implementation of makeSound method for Hawk
+    void makeSound() override {
+        std::cout << "Hawk makes a piercing sound.\n";
+    }
+};
+
+int main() {
+    // Creating objects of Eagle and Hawk classes
+    Eagle eagle;
+    Hawk hawk;
+    
+    // Calling methods for Eagle
+    std::cout << "Eagle:\n";
+    eagle.fly();
+    eagle.makeSound();
+    
+    std::cout << std::endl;
+    
+    // Calling methods for Hawk
+    std::cout << "Hawk:\n";
+    hawk.fly();
+    hawk.makeSound();
+    
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Eagle:
+            Eagle flies high in the sky.
+            Eagle makes a screeching sound.
+            Hawk:
+            Hawk flies swiftly through the air.
+            Hawk makes a piercing sound.        
+        </pre>
+    </body>
+</html>

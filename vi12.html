@@ -1,0 +1,76 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create derived classes Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape:</h2>
+        <pre>
+            #include < iostream.h >
+#include < cmath.h >
+#include < conio.h >
+// Abstract class GeometricShape
+class GeometricShape {
+public:
+    // Pure virtual functions
+    virtual double area() const = 0;
+    virtual double perimeter() const = 0;
+};
+
+// Derived class Triangle
+class Triangle : public GeometricShape {
+private:
+    double side1, side2, side3;
+
+public:
+    // Constructor
+    Triangle(double s1, double s2, double s3) : side1(s1), side2(s2), side3(s3) {}
+
+    // Calculate area using Heron's formula
+    double area() const override {
+        double s = (side1 + side2 + side3) / 2;
+        return sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+
+    // Calculate perimeter
+    double perimeter() const override {
+        return side1 + side2 + side3;
+    }
+};
+
+// Derived class Square
+class Square : public GeometricShape {
+private:
+    double side;
+
+public:
+    // Constructor
+    Square(double s) : side(s) {}
+
+    // Calculate area
+    double area() const override {
+        return side * side;
+    }
+
+    // Calculate perimeter
+    double perimeter() const override {
+        return 4 * side;
+    }
+};
+
+int main() {
+    // Example usage
+    Triangle triangle(5, 4, 3);
+    Square square(6);
+
+    std::cout << "Triangle: Area = " << triangle.area() << ", Perimeter = " << triangle.perimeter() << std::endl;
+    std::cout << "Square: Area = " << square.area() << ", Perimeter = " << square.perimeter() << std::endl;
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Triangle: Area = 6, Perimeter = 12
+            Square: Area = 36, Perimeter = 24       
+        </pre>
+    </body>
+</html>

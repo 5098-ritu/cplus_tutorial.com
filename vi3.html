@@ -1,0 +1,70 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create derived classes Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape:</h2>
+        <pre>
+            #include < iostream.h >
+#include < conio.h >
+class Shape
+ {
+public:
+    virtual float calculateArea () = 0;
+    virtual float calculatePerimeter () = 0;
+};
+
+class Circle : public Shape {
+private:
+    float radius;
+
+public:
+    Circle (float r) : radius(r) {}
+
+    float calculateArea() override {
+        return 3.14159 * radius * radius; // assuming pi as 3.14159
+    }
+
+    float calculatePerimeter() override {
+        return 2 * 3.14159 * radius; // assuming pi as 3.14159
+    }
+};
+
+class Triangle : public Shape {
+private:
+    float side1, side2, side3;
+
+public:
+    Triangle ( float s1, float s2, float s3) : 
+side1(s1), side2(s2), side3(s3) {}
+
+    float calculateArea() override {
+        // Heron's formula to calculate the area of a triangle
+        float s = (side1 + side2 + side3) / 2;
+        return sqrt(s * (s - side1) * (s - side2) 
+* (s - side3));
+    }
+
+    float calculatePerimeter() override {
+        return side1 + side2 + side3;
+    }
+};
+
+int main() {
+    Circle circle(6);
+    Triangle triangle(4,8,6);
+
+    std::cout << "Circle - Area: " << circle.calculateArea() << ", Perimeter: " << circle.calculatePerimeter() << std::endl;
+    std::cout << "Triangle - Area: " << triangle.calculateArea() << ", Perimeter: " << triangle.calculatePerimeter() << std::endl;
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Circle- area:113.04
+            Perimeter:37.7
+            Traingle-area:11.62
+            Perimeter:18       
+        </pre>
+    </body>
+</html>

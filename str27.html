@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Get a Character From the Given String:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                
+                char get_character(const std::string& str, int index) {
+                    // Check if index is valid
+                    if (index < 0 || index >= str.length()) {
+                        std::cerr << "Error: Invalid index." << std::endl;
+                        return '\0'; // Return null character if index is invalid
+                    }
+                
+                    // Return the character at the specified index
+                    return str[index];
+                }
+                
+                int main() {
+                    std::string input_string;
+                    int index;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::cin >> input_string;
+                
+                    // Input index
+                    std::cout << "Enter the index of the character to retrieve: ";
+                    std::cin >> index;
+                
+                    // Get the character at the specified index
+                    char character = get_character(input_string, index);
+                
+                    // Output result
+                    if (character != '\0') {
+                        std::cout << "Character at index " << index << ": " << character << std::endl;
+                    }
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: farah khan
+            Enter the index of the character to retrieve: Character at index 0: f      
+        </pre>
+    </body>
+</html>

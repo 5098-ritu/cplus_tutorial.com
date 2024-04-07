@@ -1,0 +1,94 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create derived classes: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type:</h2>
+        <pre>
+            #include < iostream .h>
+#include< conio.h>
+
+class BankAccount {
+public:
+    virtual void deposit ( float amount )  = 0;
+    virtual void withdraw ( float amount )  = 0;
+};
+
+class SavingsAccount : public BankAccount {
+private:
+    float balance;
+    float interestRate;
+
+public:
+    SavingsAccount(float initialBalance, float rate) : balance(initialBalance), interestRate(rate) { }
+
+    void deposit ( float amount ) override {
+        balance += amount;
+    }
+
+    void withdraw ( float amount ) override {
+        if (balance > = amount) {
+            balance -= amount;
+        } else {
+            std::cout << "Insufficient funds!" << std::endl;
+        }
+    }
+
+    void applyInterest() {
+        balance += balance * (interestRate / 100);
+    }
+
+    float getBalance() const {
+        return balance;
+    }
+};
+
+class CurrentAccount : public BankAccount {
+private:
+    float balance;
+    float overdraftLimit;
+
+public:
+    CurrentAccount(float initialBalance, float limit) : balance(initialBalance), overdraftLimit(limit) {}
+
+    void deposit(float amount) override {
+        balance += amount;
+    }
+
+    void withdraw(float amount) override {
+        if (balance + overdraftLimit > = amount) {
+            balance -= amount;
+        } else {
+            std::cout << "Transaction declined! You have reached your overdraft limit." << std::endl;
+        }
+    }
+
+    float getBalance() const {
+        return balance;
+    }
+};
+
+int main() {
+    SavingsAccount savings(2200, 5.4);
+    CurrentAccount current(500, 200);
+
+    savings.deposit(500);
+    savings.withdraw(200);
+    savings.applyInterest();
+
+    current.deposit(100);
+    current.withdraw(700);
+
+    std::cout << "Savings Account Balance: $" << savings.getBalance() << std::endl;
+    std::cout << "Current Account Balance: $" << current.getBalance() << std::endl;
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Transaction declined! you have reached your overdraft limit.
+            Saving Account balance:$1804.5
+            Current Account Blance:$2200       
+        </pre>
+    </body>
+</html>

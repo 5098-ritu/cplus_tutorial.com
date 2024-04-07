@@ -1,0 +1,56 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find the frequency of characters:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < unordered_map.h>
+                
+                void find_character_frequency(const std::string& str) {
+                    // Create a map to store character frequencies
+                    std::unordered_map< char, int> frequency_map;
+                
+                    // Count the frequency of each character in the string
+                    for (char c : str) {
+                        frequency_map[c]++;
+                    }
+                
+                    // Print character frequencies
+                    std::cout << "Character frequencies in the string:" << std::endl;
+                    for (const auto& pair : frequency_map) {
+                        std::cout << "'" << pair.first << "': " << pair.second << std::endl;
+                    }
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Find character frequencies
+                    find_character_frequency(input_string);
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: extreme cold
+            Character frequencies in the string:
+            'l': 1
+            'd': 1
+            'o': 1
+            'c': 1
+            'e': 3
+            't': 1
+            ' ': 1
+            'm': 1
+            'x': 1
+            'r': 1      
+        </pre>
+    </body>
+</html>

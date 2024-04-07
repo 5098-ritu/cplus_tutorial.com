@@ -1,0 +1,47 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to count all words in a string:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < sstream>
+                
+                int count_words(const std::string& str) {
+                    std::stringstream ss(str);
+                    std::string word;
+                    int count = 0;
+                
+                    // Count the number of words by iterating through the string
+                    while (ss >> word) {
+                        count++;
+                    }
+                
+                    return count;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Count words
+                    int word_count = count_words(input_string);
+                
+                    // Output result
+                    std::cout << "Number of words in the string: " << word_count << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+       Enter a string: the mahatma gandhi
+       Number of words in the string: 3     
+        </pre>
+    </body>
+</html>

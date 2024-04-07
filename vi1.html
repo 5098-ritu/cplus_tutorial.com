@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Animal with an abstract method called sound(). Create derived classes Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal:</h2>
+        <pre>#include < iostream.h >
+            #include < conio.h  >
+            //Abstract class
+            Class Animal
+            {
+            public:
+            virtual void sound() =0;
+            };
+            class Lion : public Animal
+            {
+            public:
+            void  sound () override
+            {
+            std :: cout << "Lion roar!"  <<  std ::  endl;
+            }
+            };
+            class Tiger : public Animal 
+            {
+            public:
+            void sound () override
+            {
+            std :: cout  <<  "Tiger growls!" << std  ::  endl;
+            }
+            {;
+            int main ()
+            {
+             Lion lion;
+            Tiger tiger;
+            lion . sound();
+            tiger . sound();
+             return 0;
+            }
+            
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Lion roar!
+            Tiger growls!
+        </pre>
+    </body>
+</html>

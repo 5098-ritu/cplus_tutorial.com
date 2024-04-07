@@ -1,0 +1,52 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to count all the words in a string:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                
+                int countWords(const std::string& str) {
+                    int wordCount = 0;
+                    bool inWord = false; // to track whether we are currently in a word
+                
+                    // Iterate through each character of the string
+                    for (char c : str) {
+                        // If the character is not a space and we are not currently in a word,
+                        // it indicates the start of a new word
+                        if (c != ' ' && !inWord) {
+                            wordCount++;
+                            inWord = true;
+                        }
+                        // If the character is a space and we were previously in a word,
+                        // it indicates the end of the current word
+                        else if (c == ' ' && inWord) {
+                            inWord = false;
+                        }
+                    }
+                    return wordCount;
+                }
+                
+                int main() {
+                    std::string inputString;
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, inputString);
+                
+                    int words = countWords(inputString);
+                    std::cout << "Number of words in the string: " << words << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: riya 
+            Number of words in the string: 1
+            
+            Enter a string: h e l l o
+            Number of words in the string: 5          
+        </pre>
+    </body>
+</html>

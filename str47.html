@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to print characters between two characters (i.e. A to P):</h2>
+        <pre>
+            #include < iostream>
+
+                void printCharactersBetween(char startChar, char endChar) {
+                    // Ensure startChar is less than or equal to endChar
+                    if (startChar > endChar) {
+                        std::swap(startChar, endChar);
+                    }
+                
+                    // Loop through characters from startChar to endChar
+                    for (char c = startChar; c <= endChar; ++c) {
+                        std::cout << c << " ";
+                    }
+                    std::cout << std::endl;
+                }
+                
+                int main() {
+                    char startChar, endChar;
+                
+                    std::cout << "Enter the starting character: ";
+                    std::cin >> startChar;
+                
+                    std::cout << "Enter the ending character: ";
+                    std::cin >> endChar;
+                
+                    std::cout << "Characters between " << startChar << " and " << endChar << " are:" << std::endl;
+                    printCharactersBetween(startChar, endChar);
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+   Enter the starting character: t
+Enter the ending character: l
+Characters between t and l are:
+l m n o p q r s t          
+        </pre>
+    </body>
+</html>

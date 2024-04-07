@@ -1,0 +1,69 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to divide a string in 'N' equal parts:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < vector.h>
+                
+                std::vector< std::string> divide_string(const std::string& str, int parts) {
+                    std::vector< std::string> divided_parts;
+                    int length = str.length();
+                    int part_size = length / parts;
+                    int extra_characters = length % parts;
+                
+                    int start = 0;
+                    int end = 0;
+                
+                    for (int i = 0; i < parts; ++i) {
+                        if (extra_characters > 0) {
+                            end = start + part_size + 1;
+                            extra_characters--;
+                        } else {
+                            end = start + part_size;
+                        }
+                        
+                        divided_parts.push_back(str.substr(start, end - start));
+                        start = end;
+                    }
+                
+                    return divided_parts;
+                }
+                
+                int main() {
+                    std::string input_string;
+                    int parts;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Number of parts
+                    std::cout << "Enter the number of parts to divide the string into: ";
+                    std::cin >> parts;
+                
+                    // Divide string into parts
+                    std::vector< std::string> divided_parts = divide_string(input_string, parts);
+                
+                    // Output result
+                    std::cout << "The string divided into " << parts << " equal parts:" << std::endl;
+                    for (const auto& part : divided_parts) {
+                        std::cout << part << std::endl;
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: hina
+            Enter the number of parts to divide the string into: 2
+            The string divided into 2 equal parts:
+            hi
+            na     
+        </pre>
+    </body>
+</html>

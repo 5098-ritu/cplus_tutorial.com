@@ -1,0 +1,55 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Program to Transpose matrix:</h2>
+        <pre>
+            #include< iostream.h>
+                
+                int main(){
+                int x,y,i,j,c=0;
+                cout<<"Enter the rows and columns For Matrix: ";
+                cin>>x>>y;
+                if(x==y){
+                int mat[10][10];
+                cout<<"Enter the elements of matrix : "<< endl;
+                for(i=0;i< x ;i++){
+                for(j=0;j< y;j++){
+                cin>>mat[i][j];}
+                }
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                if(i==j){
+                if(mat[i][j]!=1){
+                c=1;}
+                }
+                }}
+                if(c==1){
+                cout<<"Not an identity matrix ";}
+                else{
+                cout<<"Its an Identity matrix ";} }
+                else{
+                cout<<"Matrix should be square ";}
+                return 0;}
+
+        </pre>
+        <h2>
+            Output:
+        </h2>
+        <pre>
+            Enter the rows and columns For Matrix: 3
+            3
+            Enter the elements of matrix : 
+            1
+            0
+            0
+            0
+            1
+            0
+            0
+            0
+            1
+            Its an Identity matrix         
+        </pre>
+    </body>
+</html>

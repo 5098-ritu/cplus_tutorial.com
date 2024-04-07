@@ -1,0 +1,56 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a program to find out first non repeated character from input String?</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < unordered_map>
+                
+                char first_non_repeated_character(const std::string& str) {
+                    std::unordered_map< char, int> char_count;
+                
+                    // Count occurrences of each character
+                    for (char c : str) {
+                        char_count[c]++;
+                    }
+                
+                    // Find the first non-repeated character
+                    for (char c : str) {
+                        if (char_count[c] == 1) {
+                            return c;
+                        }
+                    }
+                
+                    // If no non-repeated character is found, return '\0' (null character)
+                    return '\0';
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Find the first non-repeated character
+                    char non_repeated_char = first_non_repeated_character(input_string);
+                
+                    // Output result
+                    if (non_repeated_char != '\0') {
+                        std::cout << "The first non-repeated character in the string is: " << non_repeated_char << std::endl;
+                    } else {
+                        std::cout << "No non-repeated character found in the string." << std::endl;
+                    }
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+     Enter a string: fifa awards
+    The first non-repeated character in the string is: i       
+        </pre>
+    </body>
+</html>

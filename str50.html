@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false:</h2>
+        <pre>
+            #include < iostream>
+
+                bool isMiddlePoint(int a, int b, int c) {
+                    // Sort the three integers
+                    int minNum = std::min({a, b, c});
+                    int maxNum = std::max({a, b, c});
+                    int middleNum = a + b + c - minNum - maxNum;
+                
+                    // Check if middleNum is exactly between minNum and maxNum
+                    return (middleNum == (minNum + maxNum) / 2);
+                }
+                
+                int main() {
+                    int num1, num2, num3;
+                
+                    // Input three integers
+                    std::cout << "Enter three integers: ";
+                    std::cin >> num1 >> num2 >> num3;
+                
+                    // Check if one is the middle point between the other two
+                    if (isMiddlePoint(num1, num2, num3)) {
+                        std::cout << "One of the integers is the middle point between the other two." << std::endl;
+                    } else {
+                        std::cout << "No integer is the middle point between the other two." << std::endl;
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter three integers:     
+            2
+            4
+            6
+            One of the integers is the middle point between the other two. 
+        </pre>
+    </body>
+</html>

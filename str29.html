@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Print a New Line in String (Each word in newline):</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < sstream.h>
+                
+                std::string print_newline_each_word(const std::string& str) {
+                    std::stringstream result;
+                    std::stringstream ss(str);
+                    std::string word;
+                
+                    // Tokenize the input string into words and print each word on a new line
+                    while (ss >> word) {
+                        result << word << "\n";
+                    }
+                
+                    return result.str();
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Print each word on a new line
+                    std::string result_string = print_newline_each_word(input_string);
+                
+                    // Output result
+                    std::cout << "Result string:" << std::endl;
+                    std::cout << result_string;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: hi siri!
+            Result string:
+            hi
+            siri!       
+        </pre>
+    </body>
+</html>

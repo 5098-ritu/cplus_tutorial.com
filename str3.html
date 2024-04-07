@@ -1,0 +1,49 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Check if a String contains only digits?</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < cctype.h>
+                
+                bool containsOnlyDigits(const std::string& str) {
+                    // Iterate through each character in the string
+                    for (char c : str) {
+                        // Check if the character is not a digit
+                        if (!std::isdigit(c)) {
+                            return false; // If a non-digit character is found, return false
+                        }
+                    }
+                    return true; // If all characters are digits, return true
+                }
+                
+                int main() {
+                    std::string inputString;
+                
+                    // Input string from the user
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, inputString);
+                
+                    // Check if the string contains only digits
+                    if (containsOnlyDigits(inputString)) {
+                        std::cout << "The string contains only digits." << std::endl;
+                    } else {
+                        std::cout << "The string does not contain only digits." << std::endl;
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: heyy59
+            The string does not contain only digits.
+              
+            Enter a string: 23454
+            The string contains only digits.       
+        </pre>
+    </body>
+</html>

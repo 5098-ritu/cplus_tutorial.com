@@ -1,0 +1,51 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to replace the spaces of a string with a specific character:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                
+                std::string replace_spaces(const std::string& str, char replace_char) {
+                    std::string result;
+                    for (char c : str) {
+                        if (c == ' ') {
+                            result.push_back(replace_char); // Replace space with the specified character
+                        } else {
+                            result.push_back(c); // Keep non-space characters unchanged
+                        }
+                    }
+                    return result;
+                }
+                
+                int main() {
+                    std::string input_string;
+                    char replace_char;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Input replacement character
+                    std::cout << "Enter the character to replace spaces with: ";
+                    std::cin >> replace_char;
+                
+                    // Replace spaces
+                    std::string result_string = replace_spaces(input_string, replace_char);
+                
+                    // Output result
+                    std::cout << "String with spaces replaced: " << result_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: riya sharma
+            Enter the character to replace spaces with: r
+            String with spaces replaced: riyarsharma        
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to perform Deep Copy for String?</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                
+                std::string deep_copy_string(const std::string& input_string) {
+                    return input_string; // This creates a new string object with a copy of the original string's contents
+                }
+                
+                int main() {
+                    std::string original_string = "Hello, world!";
+                    std::string copied_string = deep_copy_string(original_string);
+                
+                    std::cout << "Original String: " << original_string << std::endl;
+                    std::cout << "Copied String: " << copied_string << std::endl;
+                
+                    // Modifying the copied string to see if it's truly a deep copy
+                    copied_string += " Have a nice day!";
+                    std::cout << "\nModified Copied String: " << copied_string << std::endl;
+                    std::cout << "Original String (unchanged): " << original_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Original String: Hello, world!
+            Copied String: Hello, world!
+            
+            Modified Copied String: Hello, world! Have a nice day!
+            Original String (unchanged): Hello, world!        
+        </pre>
+    </body>
+</html>

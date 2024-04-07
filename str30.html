@@ -1,0 +1,45 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Print even length words:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < sstream>
+                
+                void print_even_length_words(const std::string& str) {
+                    std::stringstream ss(str);
+                    std::string word;
+                
+                    // Tokenize the input string into words and print even-length words
+                    while (ss >> word) {
+                        if (word.length() % 2 == 0) {
+                            std::cout << word << std::endl;
+                        }
+                    }
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Print even-length words
+                    std::cout << "Even-length words:" << std::endl;
+                    print_even_length_words(input_string);
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: ref frfd
+            Even-length words:
+            frfd        
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Person with abstract methods eat() and exercise(). Create derived classes Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises:</h2>
+        <pre>
+            #include < iostream.h >
+#include < conio.h >
+class Person {
+public:
+    virtual void eat() = 0;
+    virtual void exercise() = 0;
+};
+
+class Athlete : public Person {
+public:
+    void eat() override {
+        std::cout << "Athlete eats a balanced diet rich in proteins, carbohydrates, and vitamins." << std::endl;
+    }
+
+    void exercise() override {
+        std::cout << "Athlete follows a rigorous exercise routine including strength training, cardio, and flexibility exercises." << std::endl;
+    }
+};
+
+class LazyPerson : public Person {
+public:
+    void eat() override {
+        std::cout << "Lazy person eats junk food and snacks frequently." << std::endl;
+    }
+
+    void exercise() override {
+        std::cout << "Lazy person avoids exercise " << std::endl;
+    }
+};
+
+int main() {
+    Athlete athlete;
+    LazyPerson lazyPerson;
+
+    std::cout << "Athlete's routine:" << std::endl;
+    athlete.eat();
+    athlete.exercise();
+
+    std::cout << "\nLazy Person's routine:" << std::endl;
+    lazyPerson.eat();
+    lazyPerson.exercise();
+
+    return 0;
+}
+
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Athlete's routine:
+            Athlete eats a balanced diet rich in proteins, carbohydrates, and vitamins.
+            Athlete follows a rigorous exercise routine including strength training, cardio, and flexibility exercises.
+            Lazy Person's routine:
+            Lazy person eats junk food and snacks frequently.
+            Lazy person avoids exercise       
+        </pre>
+    </body>
+</html>

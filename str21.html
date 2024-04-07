@@ -1,0 +1,61 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find the duplicate words in a string:</h2>
+        <pre>#include < iostream.h>
+            #include < string.h>
+            #include < unordered_map.h>
+            #include < sstream.h>
+            #include < vector.h>
+            
+            void find_duplicate_words(const std::string& str) {
+                // Create a map to store word frequencies
+                std::unordered_map< std::string, int> frequency_map;
+            
+                // Tokenize the input string into words
+                std::stringstream ss(str);
+                std::string word;
+                while (ss >> word) {
+                    frequency_map[word]++;
+                }
+            
+                // Print duplicate words
+                bool found_duplicates = false;
+                for (const auto& pair : frequency_map) {
+                    if (pair.second > 1) {
+                        std::cout << pair.first << " ";
+                        found_duplicates = true;
+                    }
+                }
+            
+                // If no duplicates found, print a message
+                if (!found_duplicates) {
+                    std::cout << "No duplicate words found.";
+                }
+            
+                std::cout << std::endl;
+            }
+            
+            int main() {
+                std::string input_string;
+            
+                // Input string
+                std::cout << "Enter a string: ";
+                std::getline(std::cin, input_string);
+            
+                // Find duplicate words
+                std::cout << "Duplicate words in the string: ";
+                find_duplicate_words(input_string);
+            
+                return 0;
+            }
+            
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: the world is full of the lies.
+            Duplicate words in the string: the        
+        </pre>
+    </body>
+</html>

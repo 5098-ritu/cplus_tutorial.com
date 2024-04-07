@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to count number of words in a String?</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < sstream.h>
+                
+                int count_words(const std::string& str) {
+                    std::istringstream iss(str);
+                    int count = 0;
+                    std::string word;
+                    while (iss >> word) {
+                        count++;
+                    }
+                    return count;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Count words
+                    int word_count = count_words(input_string);
+                
+                    // Output result
+                    std::cout << "Number of words in the string: " << word_count << std::endl;
+                
+                    return 0;
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: neha
+            Number of words in the string: 1
+            
+            Enter a string: ram neha
+            Number of words in the string: 2      
+        </pre>
+    </body>
+</html>

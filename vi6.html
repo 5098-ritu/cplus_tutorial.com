@@ -1,0 +1,90 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create derived classes Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role:</h2>
+        <pre>
+            #include < iostream.h >
+#include < string.h >
+#include < conio.h >
+class Employee {
+protected:
+    std::string name;
+    int id;
+
+public:
+    Employee(const std::string& name, int id) : name(name), id(id) {}
+
+    virtual float calculateSalary() = 0;
+    virtual void displayInfo() = 0;
+};
+
+class Manager : public Employee {
+private:
+    float baseSalary;
+    float bonus;
+
+public:
+    Manager(const std::string& name, int id, float baseSalary, float bonus)
+        : Employee(name, id), baseSalary(baseSalary), bonus(bonus) {}
+
+    float calculateSalary() override {
+        return baseSalary + bonus;
+    }
+
+    void displayInfo() override {
+        std::cout << "Manager Name: " << name << std::endl;
+        std::cout << "ID: " << id << std::endl;
+        std::cout << "Base Salary: $" << baseSalary << std::endl;
+        std::cout << "Bonus: $" << bonus << std::endl;
+        std::cout << "Total Salary: $" << calculateSalary() << std::endl;
+    }
+};
+
+class Programmer : public Employee {
+private:
+    float hourlyRate;
+    int hoursWorked;
+
+public:
+    Programmer(const std::string& name, int id, float hourlyRate, int hoursWorked)
+        : Employee(name, id), hourlyRate(hourlyRate), hoursWorked(hoursWorked) {}
+
+    float calculateSalary() override {
+        return hourlyRate * hoursWorked;
+    }
+
+    void displayInfo() override {
+        std::cout << "Programmer Name: " << name << std::endl;
+        std::cout << "ID: " << id << std::endl;
+        std::cout << "Hourly Rate: $" << hourlyRate << std::endl;
+        std::cout << "Hours Worked: " << hoursWorked << std::endl;
+        std::cout << "Total Salary: $" << calculateSalary() << std::endl;
+    }
+};
+
+int main() {
+    Manager manager("John Doe", 7500,6000,9000);
+    Programmer programmer("Alice Smith", 1980,45,360);
+
+    manager.displayInfo();
+    std::cout << std::endl;
+    programmer.displayInfo();
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Manager Name:john Doe
+            Id:1001
+            Base Salary:$6000
+            Bonus:$9000
+            Total salary:$15000
+            Programmer Name: Aliece Smith
+            Id:2001
+            Hourly Rate:$45
+            Hours Worked:360       
+        </pre>
+    </body>
+</html>

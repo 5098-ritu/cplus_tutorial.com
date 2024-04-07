@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to replace lower-case characters with upper-case and vice-versa:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < cctype>
+                
+                std::string toggle_case(const std::string& str) {
+                    std::string result;
+                    for (char c : str) {
+                        if (std::islower(c)) {
+                            result.push_back(std::toupper(c)); // Convert lower-case to upper-case
+                        } else if (std::isupper(c)) {
+                            result.push_back(std::tolower(c)); // Convert upper-case to lower-case
+                        } else {
+                            result.push_back(c); // Keep non-alphabetic characters unchanged
+                        }
+                    }
+                    return result;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Toggle case
+                    std::string result_string = toggle_case(input_string);
+                
+                    // Output result
+                    std::cout << "String with case toggled: " << result_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: there is a schoolin front of cafe
+            String with case toggled: THERE IS A SCHOOLIN FRONT OF CAFE         
+        </pre>
+    </body>
+</html>

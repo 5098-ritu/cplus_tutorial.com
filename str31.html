@@ -1,0 +1,85 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to print smallest and biggest possible palindrome word in a given string:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < sstream>
+                #include < vector>
+                #include < algorithm>
+                
+                bool is_palindrome(const std::string& str) {
+                    int left = 0;
+                    int right = str.length() - 1;
+                
+                    while (left < right) {
+                        if (str[left] != str[right]) {
+                            return false;
+                        }
+                        left++;
+                        right--;
+                    }
+                    return true;
+                }
+                
+                void find_smallest_and_biggest_palindromes(const std::string& input_string) {
+                    std::stringstream ss(input_string);
+                    std::string word;
+                    std::string smallest_palindrome;
+                    std::string biggest_palindrome;
+                
+                    // Initialize smallest and biggest palindromes with empty strings
+                    smallest_palindrome = biggest_palindrome = "";
+                
+                    // Iterate through each word in the string
+                    while (ss >> word) {
+                        if (is_palindrome(word)) {
+                            // Update smallest palindrome if it's empty or current word is smaller
+                            if (smallest_palindrome.empty() || word.length() < smallest_palindrome.length()) {
+                                smallest_palindrome = word;
+                            }
+                            // Update biggest palindrome if it's empty or current word is bigger
+                            if (biggest_palindrome.empty() || word.length() > biggest_palindrome.length()) {
+                                biggest_palindrome = word;
+                            }
+                        }
+                    }
+                
+                    // Output result
+                    if (!smallest_palindrome.empty()) {
+                        std::cout << "Smallest palindrome word: " << smallest_palindrome << std::endl;
+                    } else {
+                        std::cout << "No palindrome word found." << std::endl;
+                    }
+                
+                    if (!biggest_palindrome.empty()) {
+                        std::cout << "Biggest palindrome word: " << biggest_palindrome << std::endl;
+                    } else {
+                        std::cout << "No palindrome word found." << std::endl;
+                    }
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Find smallest and biggest palindromes
+                    find_smallest_and_biggest_palindromes(input_string);
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: refer reviver
+            Smallest palindrome word: refer
+            Biggest palindrome word: reviver       
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Program to Multiply Two Matrices:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< iomanip.h>
+            
+                int main(){
+                int x,y,m,n,i,j;
+                cout<<"Enter the rows and columns for A matrix : ";
+                cin>>x>>y;
+                cout<<"Enter the rows and columns for B matrix : ";
+                cin>>m>>n;
+                if(y==m){
+                cout<<"Enter element of A Matrix : "<< endl;
+                int mata[10][10];
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                cin>>mata[i][j];}
+                }
+                cout<<"Enter element of B Matrix : "<< endl;
+                int matb[10][10];
+                for(i=0;i< m;i++){
+                for(j=0;j< n;j++){
+                cin>>matb[i][j];}
+                }
+                
+                int mul[10][10];
+                for(i=0;i< x;i++){
+                for(j=0;j< n;j++){
+                mul[i][j]=0;
+                for(int k=0;k< y;k++){
+                mul[i][j]=mul[i][j]+mata[i][k]*matb[k][j];}}
+                }
+                cout<<"A Matrix : ";
+                for(i=0;i< x;i++){
+                cout<< endl;
+                for(j=0;j< y;j++){
+                cout<< setw(5)<< mata[i][j];
+                }}
+                cout<< endl;
+                cout<<"B Matrix : "<< endl;
+                for(i=0;i< m;i++){
+                for(j=0;j< n;j++){
+                cout<< setw(5)<< matb[i][j];
+                }
+                cout<< endl;}
+                cout<<"A X B Matrix : ";
+                for(i=0;i< x;i++){
+                cout<< endl;
+                for(j=0;j< n;j++){
+                cout<< setw(5)<< mul[i][j];
+                }}}
+                else{
+                cout<<"Matrix Multiplication not applicable";}
+                return 0;}
+
+        </pre>
+        <h2>
+            Output:
+        </h2>
+        <pre>
+Enter the rows and columns for A matrix : 2
+3
+Enter the rows and columns for B matrix : 3
+3
+Enter element of A Matrix : 
+23
+22
+43
+45
+65
+44
+Enter element of B Matrix : 
+13
+32
+26
+79
+22
+62
+11
+34
+98
+A Matrix : 
+   23   22   43
+   45   65   44
+B Matrix :
+   13   32   26
+   79   22   62
+   11   34   98
+A X B Matrix :
+ 2510 2682 6176
+ 6204 4366 9512
+        </pre>
+    </body>
+</html>

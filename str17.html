@@ -1,0 +1,62 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find all the permutations of a string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < vector.h>
+                
+                void generate_permutations(const std::string& str, std::string current_permutation, std::vector<std::string>& permutations) {
+                    // Base case: if current_permutation is a full permutation of str, add it to the list of permutations
+                    if (current_permutation.length() == str.length()) {
+                        permutations.push_back(current_permutation);
+                        return;
+                    }
+                
+                    // Recursively generate permutations by swapping characters
+                    for (int i = 0; i < str.length(); ++i) {
+                        if (current_permutation.find(str[i]) == std::string::npos) { // Skip if character already exists in current_permutation
+                            generate_permutations(str, current_permutation + str[i], permutations);
+                        }
+                    }
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::cin >> input_string;
+                
+                    // Vector to store all permutations
+                    std::vector< std::string> permutations;
+                
+                    // Generate permutations
+                    generate_permutations(input_string, "", permutations);
+                
+                    // Output result
+                    std::cout << "All permutations of the string:" << std::endl;
+                    for (const auto& permutation : permutations) {
+                        std::cout << permutation << std::endl;
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+Enter a string: 123
+All permutations of the string:
+123
+132
+213
+231
+312
+321
+    
+        </pre>
+    </body>
+</html>

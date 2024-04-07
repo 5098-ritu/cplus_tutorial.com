@@ -1,0 +1,68 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Convert Enum to String:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < map.h>
+                
+                // Enum definition
+                enum class Day { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday };
+                
+                // Function to convert enum to string using switch-case
+                std::string enumToStringSwitch(Day day) {
+                    switch(day) {
+                        case Day::Monday:    return "Monday";
+                        case Day::Tuesday:   return "Tuesday";
+                        case Day::Wednesday: return "Wednesday";
+                        case Day::Thursday:  return "Thursday";
+                        case Day::Friday:    return "Friday";
+                        case Day::Saturday:  return "Saturday";
+                        case Day::Sunday:    return "Sunday";
+                        default:             return "Unknown";
+                    }
+                }
+                
+                // Function to convert enum to string using a lookup table
+                std::string enumToStringLookup(Day day) {
+                    static std::map< Day, std::string> dayToString = {
+                        {Day::Monday, "Monday"},
+                        {Day::Tuesday, "Tuesday"},
+                        {Day::Wednesday, "Wednesday"},
+                        {Day::Thursday, "Thursday"},
+                        {Day::Friday, "Friday"},
+                        {Day::Saturday, "Saturday"},
+                        {Day::Sunday, "Sunday"}
+                    };
+                
+                    auto it = dayToString.find(day);
+                    if (it != dayToString.end()) {
+                        return it->second;
+                    } else {
+                        return "Unknown";
+                    }
+                }
+                
+                int main() {
+                    // Test enum-to-string conversion
+                    Day today = Day::Wednesday;
+                
+                    // Using switch-case
+                    std::cout << "Using switch-case: " << enumToStringSwitch(today) << std::endl;
+                
+                    // Using lookup table
+                    std::cout << "Using lookup table: " << enumToStringLookup(today) << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Using switch-case: Wednesday
+            Using lookup table: Wednesday      
+        </pre>
+    </body>
+</html>

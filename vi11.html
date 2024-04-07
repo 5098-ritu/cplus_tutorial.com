@@ -1,0 +1,72 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Shape2D with abstract methods draw() and resize(). Create derived classes Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape:</h2>
+        <pre>
+            #include < iostream.h >
+#include < conio.h >
+class Shape2D {
+public:
+    virtual void draw() = 0;
+    virtual void resize(double factor) = 0;
+};
+
+class Rectangle : public Shape2D {
+private:
+    double width;
+    double height;
+
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+
+    void draw() override {
+        std::cout << "Drawing Rectangle with width: " << width << " and height: " << height << std::endl;
+    }
+
+    void resize(double factor) override {
+        width *= factor;
+        height *= factor;
+        std::cout << "Resizing Rectangle by a factor of " << factor << ". New width: " << width << ", New height: " << height << std::endl;
+    }
+};
+
+class Circle : public Shape2D {
+private:
+    double radius;
+
+public:
+    Circle(double r) : radius(r) {}
+
+    void draw() override {
+        std::cout << "Drawing Circle with radius: " << radius << std::endl;
+    }
+
+    void resize(double factor) override {
+        radius *= factor;
+        std::cout << "Resizing Circle by a factor of " << factor << ". New radius: " << radius << std::endl;
+    }
+};
+
+int main() {
+    Rectangle rectangle(7, 9);
+    Circle circle(7);
+
+    rectangle.draw();
+    rectangle.resize(3.5);
+
+    circle.draw();
+    circle.resize(2);
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Drawing Rectangle with width: 7 and height: 9
+            Resizing Rectangle by a factor of 3.5. New width: 10.5, New height: 12.5
+            Drawing Circle with radius: 7
+            Resizing Circle by a factor of 2. New radius: 9      
+        </pre>
+    </body>
+</html>

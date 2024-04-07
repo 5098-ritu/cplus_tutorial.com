@@ -1,0 +1,66 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find maximum and minimum occurring character in a string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < unordered_map.h>
+                
+                std::pair< char, char> find_max_min_occuring(const std::string& str) {
+                    // Create a map to store character frequencies
+                    std::unordered_map< char, int> frequency_map;
+                
+                    // Count the frequency of each character in the string
+                    for (char c : str) {
+                        frequency_map[c]++;
+                    }
+                
+                    // Find the maximum and minimum occurring characters
+                    char max_char = '\0'; // Initialize to null character
+                    char min_char = '\0'; // Initialize to null character
+                    int max_count = 0;
+                    int min_count = str.length() + 1; // Initialize to a value greater than the length of the string
+                
+                    for (const auto& pair : frequency_map) {
+                        if (pair.second > max_count) {
+                            max_char = pair.first;
+                            max_count = pair.second;
+                        }
+                        if (pair.second < min_count) {
+                            min_char = pair.first;
+                            min_count = pair.second;
+                        }
+                    }
+                
+                    return std::make_pair(max_char, min_char);
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::cin >> input_string;
+                
+                    // Find maximum and minimum occurring characters
+                    std::pair< char, char> result = find_max_min_occuring(input_string);
+                
+                    // Output result
+                    std::cout << "Maximum occurring character: " << result.first << std::endl;
+                    std::cout << "Minimum occurring character: " << result.second << std::endl;
+                
+                    return 0;
+                }
+                
+            
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: chanakya
+            Maximum occurring character: a
+            Minimum occurring character: k         
+        </pre>
+    </body>
+</html>

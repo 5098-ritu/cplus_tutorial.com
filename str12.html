@@ -1,0 +1,62 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to count the total number of vowels and consonants in a string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < cctype.h>
+                
+                bool is_vowel(char c) {
+                    c = std::tolower(c);
+                    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+                }
+                
+                int count_vowels(const std::string& str) {
+                    int vowel_count = 0;
+                    for (char c : str) {
+                        if (isalpha(c) && is_vowel(c)) {
+                            vowel_count++;
+                        }
+                    }
+                    return vowel_count;
+                }
+                
+                int count_consonants(const std::string& str) {
+                    int consonant_count = 0;
+                    for (char c : str) {
+                        if (isalpha(c) && !is_vowel(c)) {
+                            consonant_count++;
+                        }
+                    }
+                    return consonant_count;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Count vowels and consonants
+                    int vowel_count = count_vowels(input_string);
+                    int consonant_count = count_consonants(input_string);
+                
+                    // Output result
+                    std::cout << "Total number of vowels in the string: " << vowel_count << std::endl;
+                    std::cout << "Total number of consonants in the string: " << consonant_count << std::endl;
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: raghuvati raghav
+            Total number of vowels in the string: 6
+            Total number of consonants in the string: 9
+            </pre>
+            
+        </body>
+        </html>

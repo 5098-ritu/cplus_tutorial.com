@@ -1,0 +1,64 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Program to display the lower triangular matrix:        </h2>
+        <pre>
+            #include< iostream.h>
+            
+                int main(){
+                int x,y,i,j,c=0;
+                cout<<"Enter the rows and columns For Matrix: ";
+                cin>>x>>y;
+                if(x==y){
+                int mata[10][10];
+                cout<<"Enter the elements of matrix : "<< endl;
+                for(i=0;i< x;i++){
+                
+                for(j=0;j< y;j++){
+                cin>>mata[i][j];}
+                }
+                cout<<"Lower triangular matrix of the given matrix : "<< endl;
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                if (i==j){
+                c=1;
+                cout<<"  "<< mata[i][j];}
+                else if (c==0){
+                cout<<"  "<< mata[i][j];}
+                else{
+                cout<<"  "<< 0;}}
+                cout<< endl;
+                c=0;}}
+                else{
+                cout<<"Not a square matrix";}
+                return 0;}
+
+        </pre>
+        <h2>
+            Output:
+        </h2>
+        <pre>
+Enter the rows and columns For Matrix: 2
+3
+Not a square matrix
+
+Enter the rows and columns For Matrix: 3
+3
+Enter the elements of matrix : 
+23
+43
+54
+67
+29
+34
+64
+98
+33
+Lower triangular matrix of the given matrix : 
+  23  0  0
+  67  29  0
+  64  98  33
+        </pre>
+    </body>
+</html>

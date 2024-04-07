@@ -1,0 +1,64 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to determine whether a given string is palindrome:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < cctype.h>
+                
+                bool is_palindrome(const std::string& str) {
+                    int left = 0;
+                    int right = str.length() - 1;
+                
+                    while (left < right) {
+                        // Skip non-alphanumeric characters from left
+                        while (!std::isalnum(str[left]) && left < right) {
+                            left++;
+                        }
+                        // Skip non-alphanumeric characters from right
+                        while (!std::isalnum(str[right]) && left < right) {
+                            right--;
+                        }
+                
+                        // Check if characters are equal
+                        if (std::tolower(str[left]) != std::tolower(str[right])) {
+                            return false;
+                        }
+                
+                        left++;
+                        right--;
+                    }
+                
+                    return true;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Check if the input string is a palindrome
+                    if (is_palindrome(input_string)) {
+                        std::cout << "The string is a palindrome." << std::endl;
+                    } else {
+                        std::cout << "The string is not a palindrome." << std::endl;
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: madhu 
+            The string is not a palindrome.
+    
+            Enter a string: rotator
+            The string is a palindrome.     
+        </pre>
+    </body>
+</html>

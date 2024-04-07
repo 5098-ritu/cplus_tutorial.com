@@ -1,0 +1,60 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find the duplicate characters in a string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < unordered_map.h>
+                
+                void find_duplicates(const std::string& str) {
+                    // Create a map to store character frequencies
+                    std::unordered_map< char, int> frequency_map;
+                
+                    // Count the frequency of each character in the string
+                    for (char c : str) {
+                        frequency_map[c]++;
+                    }
+                
+                    // Print duplicate characters
+                    bool found_duplicates = false;
+                    for (const auto& pair : frequency_map) {
+                        if (pair.second > 1) {
+                            std::cout << pair.first << " ";
+                            found_duplicates = true;
+                        }
+                    }
+                
+                    // If no duplicates found, print a message
+                    if (!found_duplicates) {
+                        std::cout << "No duplicate characters found.";
+                    }
+                
+                    std::cout << std::endl;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Find duplicate characters
+                    std::cout << "Duplicate characters in the string: ";
+                    find_duplicates(input_string);
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: aftaar
+            Duplicate characters in the string: a 
+            
+            Enter a string: ananya
+            Duplicate characters in the string: n a     
+        </pre>
+    </body>
+</html>

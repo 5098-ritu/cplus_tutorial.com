@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to count all vowels in a string:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < cctype>
+                
+                int count_vowels(const std::string& str) {
+                    int vowel_count = 0;
+                
+                    // Iterate through the string and count vowels
+                    for (char c : str) {
+                        // Convert character to lowercase for case-insensitive comparison
+                        char lowercase_c = std::tolower(c);
+                        // Check if the character is a vowel
+                        if (lowercase_c == 'a' || lowercase_c == 'e' || lowercase_c == 'i' || lowercase_c == 'o' || lowercase_c == 'u') {
+                            vowel_count++;
+                        }
+                    }
+                
+                    return vowel_count;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Count vowels
+                    int vowel_count = count_vowels(input_string);
+                
+                    // Output result
+                    std::cout << "Number of vowels in the string: " << vowel_count << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: AK  Sharma
+            Number of vowels in the string: 3      
+        </pre>
+    </body>
+</html>

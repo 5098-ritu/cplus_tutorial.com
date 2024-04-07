@@ -1,0 +1,58 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create derived classes Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type:</h2>
+        <pre>
+            #include < iostream.h >
+#include < conio.h >
+class Vehicle {
+public:
+    virtual void startEngine() = 0;
+    virtual void stopEngine() = 0;
+};
+
+class Car : public Vehicle {
+public:
+    void startEngine() override {
+        std::cout << "Car engine started." << std::endl;
+    }
+
+    void stopEngine() override {
+        std::cout << "Car engine stopped." << std::endl;
+    }
+};
+
+class Motorcycle : public Vehicle {
+public:
+    void startEngine() override {
+        std::cout << "Motorcycle engine started." << std::endl;
+    }
+
+    void stopEngine() override {
+        std::cout << "Motorcycle engine stopped." << std::endl;
+    }
+};
+
+int main() {
+    Car car;
+    Motorcycle motorcycle;
+
+    car.startEngine();
+    car.stopEngine();
+
+    motorcycle.startEngine();
+    motorcycle.stopEngine();
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Car engine started.
+            Car engine stopped.
+            Motorcycle engine started.
+            Motorcycle engine stopped.     
+        </pre>
+    </body>
+</html>

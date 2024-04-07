@@ -1,0 +1,99 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to check whether a string is a valid password:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < cctype>
+                
+                bool isValidPassword(const std::string& password) {
+                    // Check length
+                    if (password.length() < 8) {
+                        std::cout << "Password must be at least 8 characters long." << std::endl;
+                        return false;
+                    }
+                
+                    // Check for presence of uppercase letters
+                    bool hasUpperCase = false;
+                    for (char c : password) {
+                        if (std::isupper(c)) {
+                            hasUpperCase = true;
+                            break;
+                        }
+                    }
+                    if (!hasUpperCase) {
+                        std::cout << "Password must contain at least one uppercase letter." << std::endl;
+                        return false;
+                    }
+                
+                    // Check for presence of lowercase letters
+                    bool hasLowerCase = false;
+                    for (char c : password) {
+                        if (std::islower(c)) {
+                            hasLowerCase = true;
+                            break;
+                        }
+                    }
+                    if (!hasLowerCase) {
+                        std::cout << "Password must contain at least one lowercase letter." << std::endl;
+                        return false;
+                    }
+                
+                    // Check for presence of digits
+                    bool hasDigit = false;
+                    for (char c : password) {
+                        if (std::isdigit(c)) {
+                            hasDigit = true;
+                            break;
+                        }
+                    }
+                    if (!hasDigit) {
+                        std::cout << "Password must contain at least one digit." << std::endl;
+                        return false;
+                    }
+                
+                    // Check for presence of special characters (you can define your own set of special characters)
+                    bool hasSpecialChar = false;
+                    std::string specialChars = "!@#$%^&*()-_+=<>?/\\";
+                    for (char c : password) {
+                        if (specialChars.find(c) != std::string::npos) {
+                            hasSpecialChar = true;
+                            break;
+                        }
+                    }
+                    if (!hasSpecialChar) {
+                        std::cout << "Password must contain at least one special character." << std::endl;
+                        return false;
+                    }
+                
+                    // If all criteria are met, return true
+                    return true;
+                }
+                
+                int main() {
+                    std::string password;
+                    std::cout << "Enter your password: ";
+                    std::getline(std::cin, password);
+                
+                    if (isValidPassword(password)) {
+                        std::cout << "Password is valid." << std::endl;
+                    } else {
+                        std::cout << "Password is not valid." << std::endl;
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+  Enter your password: 2345
+Password must be at least 8 characters long.
+Password is not valid.
+Enter your password: 23451234
+Password is valid.      
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Reverse String Word by Word:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < sstream>
+                #include < stack>
+                
+                std::string reverse_words(const std::string& str) {
+                    std::stack< std::string> words;
+                    std::stringstream ss(str);
+                    std::string word;
+                
+                    // Tokenize the input string into words and push them onto a stack
+                    while (ss >> word) {
+                        words.push(word);
+                    }
+                
+                    // Reconstruct the string by popping words from the stack
+                    std::string reversed_str;
+                    while (!words.empty()) {
+                        reversed_str += words.top() + " "; // Append each word followed by a space
+                        words.pop();
+                    }
+                
+                    // Remove the trailing space
+                    if (!reversed_str.empty()) {
+                        reversed_str.pop_back();
+                    }
+                
+                    return reversed_str;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Reverse the string word by word
+                    std::string reversed_string = reverse_words(input_string);
+                
+                    // Output result
+                    std::cout << "Reversed string (word by word): " << reversed_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: a great inspiration
+            Reversed string (word by word): inspiration great a        
+        </pre>
+    </body>
+</html>

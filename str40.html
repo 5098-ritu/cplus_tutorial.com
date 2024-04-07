@@ -1,0 +1,63 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a program to check if two Strings are created with same characters?</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < unordered_map>
+                
+                bool are_same_characters(const std::string& str1, const std::string& str2) {
+                    // If the lengths of the strings are different, they cannot have the same characters
+                    if (str1.length() != str2.length()) {
+                        return false;
+                    }
+                
+                    // Count the occurrences of each character in the first string
+                    std::unordered_map< char, int> char_count;
+                    for (char c : str1) {
+                        char_count[c]++;
+                    }
+                
+                    // Decrease the count of each character in the second string
+                    for (char c : str2) {
+                        // If the character doesn't exist in the first string or the count becomes negative, return false
+                        if (char_count.find(c) == char_count.end() || char_count[c] == 0) {
+                            return false;
+                        }
+                        char_count[c]--;
+                    }
+                
+                    // If all characters in the first string have been matched and their counts are zero in the second string, return true
+                    return true;
+                }
+                
+                int main() {
+                    std::string str1, str2;
+                
+                    // Input strings
+                    std::cout << "Enter the first string: ";
+                    std::getline(std::cin, str1);
+                    std::cout << "Enter the second string: ";
+                    std::getline(std::cin, str2);
+                
+                    // Check if the strings are created with the same characters
+                    if (are_same_characters(str1, str2)) {
+                        std::cout << "The two strings are created with the same characters." << std::endl;
+                    } else {
+                        std::cout << "The two strings are not created with the same characters." << std::endl;
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+       Enter the first string: rahul
+       Enter the second string: rahul
+        The two strings are created with the same characters.     
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Enter the Matrix of rows and columns entered by the user and print in matrix format:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< iomanip.h>
+                
+                int main(){
+                int x,y,i,j;
+                cout<<"Enter the rows and columns : ";
+                cin>>x>>y;
+                int mat[10][10];
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                cout<<"Matrix element "<< i+1<< j+1<<" : ";
+                cin>>mat[i][j];}
+                }
+                cout<<"Matrix : "<< endl;
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                cout<< setw(5)<< mat[i][j];
+                }
+                cout<< endl;}
+                return 0;}
+
+        </pre>
+        <h2>
+            Output:
+        </h2>
+        <pre>
+            Enter the rows and columns : 2
+            3
+            Matrix element 11 : 32
+            Matrix element 12 : 11
+            Matrix element 13 : 32
+            Matrix element 21 : 45
+            Matrix element 22 : 65
+            Matrix element 23 : 77
+            Matrix : 
+                32   11   32
+                45   65   77
+
+        </pre>
+    </body>
+</html>

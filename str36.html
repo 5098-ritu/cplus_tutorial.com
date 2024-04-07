@@ -1,0 +1,70 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Splitting into a number of sub-strings:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                #include < sstream>
+                #include < vector>
+                
+                std::vector< std::string> split_string(const std::string& str, char delimiter) {
+                    std::vector< std::string> substrings;
+                    std::stringstream ss(str);
+                    std::string substring;
+                
+                    // Split the string using the specified delimiter
+                    while (std::getline(ss, substring, delimiter)) {
+                        substrings.push_back(substring);
+                    }
+                
+                    return substrings;
+                }
+                
+                int main() {
+                    std::string input_string;
+                    char delimiter;
+                    int num_substrings;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Input delimiter
+                    std::cout << "Enter the delimiter character: ";
+                    std::cin >> delimiter;
+                
+                    // Input number of substrings
+                    std::cout << "Enter the number of substrings to split into: ";
+                    std::cin >> num_substrings;
+                
+                    // Split the string into substrings
+                    std::vector< std::string> substrings = split_string(input_string, delimiter);
+                
+                    // Output result
+                    std::cout << "Substrings:" << std::endl;
+                    int count = 0;
+                    for (const auto& substring : substrings) {
+                        std::cout << "Substring " << ++count << ": " << substring << std::endl;
+                        if (count == num_substrings) {
+                            break;
+                        }
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: down to earth
+            Enter the delimiter character: t
+            Enter the number of substrings to split into: 3
+            Substrings:
+            Substring 1: down 
+            Substring 2: o ear
+            Substring 3: h      
+        </pre>
+    </body>
+</html>

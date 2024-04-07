@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to separate the Individual Characters from a String:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                
+                void separate_characters(const std::string& str) {
+                    std::cout << "Individual characters from the string:" << std::endl;
+                    for (char c : str) {
+                        std::cout << c << std::endl;
+                    }
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Separate individual characters
+                    separate_characters(input_string);
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+     Enter a string: here is a 
+Individual characters from the string:
+h
+e
+r
+e
+ 
+i
+s
+
+a       
+        </pre>
+    </body>
+</html>

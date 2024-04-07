@@ -1,0 +1,44 @@
+<html>
+    <head></head>
+    <body>
+        <h2>2. Program to Swapping Pair of Characters
+
+            Explanation -
+            
+            Enter the string from user and enter the characters that you want to swap with one another:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                
+                void swapPairs(std::string& str) {
+                    for (size_t i = 0; i < str.length() - 1; i += 2) {
+                        // Swap characters at positions i and i+1
+                        std::swap(str[i], str[i + 1]);
+                    }
+                }
+                
+                int main() {
+                    std::string inputString;
+                
+                    // Input string from the user
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, inputString);
+                
+                    // Call the function to swap pairs of characters
+                    swapPairs(inputString);
+                
+                    // Output the modified string
+                    std::cout << "String after swapping pairs of characters: " << inputString << std::endl;
+                
+                    return 0;
+                }
+                 
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: hello
+            String after swapping pairs of characters: ehllo      
+        </pre>
+    </body>
+</html>

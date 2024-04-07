@@ -1,0 +1,292 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find all subsets of a string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                #include < vector.h>
+                
+                void generate_subsets(const std::string& str, int index, std::string current_subset, std::vector<std::string>& subsets) {
+                    // Add the current subset to the list of subsets
+                    subsets.push_back(current_subset);
+                
+                    // Recursively generate subsets by including and excluding the current character
+                    for (int i = index; i < str.length(); ++i) {
+                        generate_subsets(str, i + 1, current_subset + str[i], subsets); // Include the current character
+                        generate_subsets(str, i + 1, current_subset, subsets);          // Exclude the current character
+                    }
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::cin >> input_string;
+                
+                    // Vector to store all subsets
+                    std::vector< std::string> subsets;
+                
+                    // Generate subsets
+                    generate_subsets(input_string, 0, "", subsets);
+                
+                    // Output result
+                    std::cout << "All subsets of the string:" << std::endl;
+                    for (const auto& subset : subsets) {
+                        std::cout << subset << std::endl;
+                    }
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: hello
+            All subsets of the string:
+            
+            h
+            he
+            hel
+            hell
+            hello
+            hell
+            hel
+            helo
+            hel
+            helo
+            hel
+            he
+            hel
+            helo
+            hel
+            he
+            heo
+            he
+            heo
+            he
+            hel
+            helo
+            hel
+            he
+            heo
+            he
+            heo
+            he
+            h
+            hl
+            hll
+            hllo
+            hll
+            hl
+            hlo
+            hl
+            hlo
+            hl
+            h
+            hl
+            hlo
+            hl
+            h
+            ho
+            h
+            ho
+            h
+            hl
+            hlo
+            hl
+            h
+            ho
+            h
+            ho
+            h
+            hl
+            hll
+            hllo
+            hll
+            hl
+            hlo
+            hl
+            hlo
+            hl
+            h
+            hl
+            hlo
+            hl
+            h
+            ho
+            h
+            ho
+            h
+            hl
+            hlo
+            hl
+            h
+            ho
+            h
+            ho
+            h
+            
+            e
+            el
+            ell
+            ello
+            ell
+            el
+            elo
+            el
+            elo
+            el
+            e
+            el
+            elo
+            el
+            e
+            eo
+            e
+            eo
+            e
+            el
+            elo
+            el
+            e
+            eo
+            e
+            eo
+            e
+            
+            l
+            ll
+            llo
+            ll
+            l
+            lo
+            l
+            lo
+            l
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o
+            
+            l
+            ll
+            llo
+            ll
+            l
+            lo
+            l
+            lo
+            l
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o
+            
+            e
+            el
+            ell
+            ello
+            ell
+            el
+            elo
+            el
+            elo
+            el
+            e
+            el
+            elo
+            el
+            e
+            eo
+            e
+            eo
+            e
+            el
+            elo
+            el
+            e
+            eo
+            e
+            eo
+            e
+            
+            l
+            ll
+            llo
+            ll
+            l
+            lo
+            l
+            lo
+            l
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o
+            
+            l
+            ll
+            llo
+            ll
+            l
+            lo
+            l
+            lo
+            l
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o
+            
+            l
+            lo
+            l
+            
+            o
+            
+            o       
+        </pre>
+    </body>
+</html>

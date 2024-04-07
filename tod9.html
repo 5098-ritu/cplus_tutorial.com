@@ -1,0 +1,50 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Program to find the sum of each row and each column of a matrix:</h2>
+        <pre>
+            #include< iostream.h>
+                
+                int main(){
+                int x,y,i,j;
+                cout<<"Enter the rows and columns For Matrix: ";
+                cin>>x>>y;
+                int mata[10][10],r[10],c[10];
+                cout<<"Enter the elements of matrix : "<< endl;
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                cin>>mata[i][j];}
+                }
+                for(i=0;i< x;i++){
+                r[i]=0;
+                for(j=0;j< y;j++){
+                   r[i]=r[i]+mata[i][j];
+                }}
+                for(i=0;i< y;i++){
+                c[i]=0;
+                for(j=0;j< x;j++){
+                   c[i]=c[i]+mata[i][j];
+                }}
+                for(i=0;i< x;i++){
+                cout<<"Sum Of Row "<< i+1<<": "<< r[i]<< endl;}
+                for(i=0;i< y;i++){
+                cout<<"Sum Of Column "<< i+1<<": "<< c[i]<< endl;}
+                return 0;}
+
+        </pre>
+        <h2>
+            Output:
+        </h2>
+        <pre>
+            Enter the rows and columns For Matrix: 1
+            2
+            Enter the elements of matrix : 
+            23
+            21
+            Sum Of Row 1: 44
+            Sum Of Column 1: 23
+            Sum Of Column 2: 1878039440           
+        </pre>
+    </body>
+</html>

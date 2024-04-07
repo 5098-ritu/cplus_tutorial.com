@@ -1,0 +1,60 @@
+<html>
+    <head></head>
+    <body>
+        <h2>1. Program to Check Anagram
+
+            Explanation -
+            
+            Two Strings are called the anagram if they contain the same characters. However, the order or sequence of the characters can be difference:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < algorithm.h>
+                #include < string.h>
+                
+                bool areAnagrams(const std::string& str1, const std::string& str2) {
+                    // If the lengths of the strings are different, they cannot be anagrams
+                    if (str1.length() != str2.length()) {
+                        return false;
+                    }
+                
+                    // Sort the characters of both strings
+                    std::string sortedStr1 = str1;
+                    std::string sortedStr2 = str2;
+                    std::sort(sortedStr1.begin(), sortedStr1.end());
+                    std::sort(sortedStr2.begin(), sortedStr2.end());
+                
+                    // Compare the sorted strings
+                    return sortedStr1 == sortedStr2;
+                }
+                
+                int main() {
+                    std::string str1, str2;
+                
+                    std::cout << "Enter the first string: ";
+                    std::getline(std::cin, str1);
+                
+                    std::cout << "Enter the second string: ";
+                    std::getline(std::cin, str2);
+                
+                    if (areAnagrams(str1, str2)) {
+                        std::cout << "The strings are anagrams." << std::endl;
+                    } else {
+                        std::cout << "The strings are not anagrams." << std::endl;
+                    }
+                
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the first string: make
+            Enter the second string: up
+            The strings are not anagrams.
+            
+            Enter the first string: bored
+            Enter the second string: robed
+            The strings are anagrams.
+        </pre>
+    </body>
+</html>

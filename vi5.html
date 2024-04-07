@@ -1,0 +1,75 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create an abstract class Animal with abstract methods eat() and sleep(). Create derived classes Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior:</h2>
+        <pre>
+            #include < iostream.h > 
+#include < conio.h >
+class Animal {
+public:
+    virtual void eat() = 0;
+    virtual void sleep() = 0;
+};
+
+class Lion : public Animal {
+public:
+    void eat() override {
+        std::cout << "Lion is eating meat." << std::endl;
+    }
+
+    void sleep() override {
+        std::cout << "Lion is sleeping in its den." << std::endl;
+    }
+};
+
+class Tiger : public Animal {
+public:
+    void eat() override {
+        std::cout << "Tiger is eating meat." << std::endl;
+    }
+
+    void sleep() override {
+        std::cout << "Tiger is sleeping in the jungle." << std::endl;
+    }
+};
+
+class Deer : public Animal {
+public:
+    void eat() override {
+        std::cout << "Deer is grazing on grass." << std::endl;
+    }
+
+    void sleep() override {
+        std::cout << "Deer is sleeping under a tree." << std::endl;
+    }
+};
+
+int main() {
+    Lion lion;
+    Tiger tiger;
+    Deer deer;
+
+    lion.eat();
+    lion.sleep();
+
+    tiger.eat();
+    tiger.sleep();
+
+    deer.eat();
+    deer.sleep();
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Lion is eating meat.
+            Lion is sleeping in its den.
+            Tiger is eating meat.
+            Tiger is sleeping in the jungle.
+            Deer is grazing on grass.
+            Deer is sleeping under a tree.       
+        </pre>
+    </body>
+</html>

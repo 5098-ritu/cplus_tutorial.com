@@ -1,0 +1,44 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to display the current date and time:</h2>
+        <pre>
+            #include < iostream>
+                #include < ctime>
+                
+                void displayCurrentDateTime() {
+                    // Get current time as a time_t object
+                    std::time_t currentTime = std::time(nullptr);
+                    
+                    // Convert current time to a tm struct for local time
+                    std::tm* localTime = std::localtime(&currentTime);
+                    
+                    // Output the current date and time
+                    std::cout << "Current Date and Time: ";
+                    
+                    // Output date
+                    std::cout << localTime->tm_year + 1900 << "-"
+                              << std::setfill('0') << std::setw(2) << localTime->tm_mon + 1 << "-"
+                              << std::setfill('0') << std::setw(2) << localTime->tm_mday << " ";
+                    
+                    // Output time
+                    std::cout << std::setfill('0') << std::setw(2) << localTime->tm_hour << ":"
+                              << std::setfill('0') << std::setw(2) << localTime->tm_min << ":"
+                              << std::setfill('0') << std::setw(2) << localTime->tm_sec << std::endl;
+                }
+                
+                int main() {
+                    // Call the method to display current date and time
+                    displayCurrentDateTime();
+                    
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Current Date and Time: 2024-05-06 17:53:31         
+        </pre>
+    </body>
+</html>

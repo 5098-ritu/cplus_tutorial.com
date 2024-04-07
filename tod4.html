@@ -1,0 +1,86 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Program to subtract the two matrices:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< iomanip.h>
+            
+                int main(){
+                int x,y,i,j;
+                cout<<"Enter the rows and columns : ";
+                cin>>x>>y;
+                int mata[10][10];
+                cout<<"Enter elements of Matrix A "<< endl;
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                cin>>mata[i][j];}
+                }
+                int matb[10][10];
+                cout<<"Enter elements of Matrix B"<< endl;
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                cin>>matb[i][j];}
+                }
+                cout<<"A Matrix : ";
+                for(i=0;i< x;i++){
+                cout<< endl;
+                for(j=0;j< y;j++){
+                cout<< setw(5)<< mata[i][j];
+                }
+                }
+                cout<< endl;
+                cout<<"B Matrix : ";
+                for(i=0;i< x;i++){
+                cout<< endl;
+                for(j=0;j< y;j++){
+                cout<< setw(5)<< matb[i][j];
+                }
+                }
+                cout<< endl;
+                cout<<"A+B Matrix : "<< endl;
+                for(i=0;i< x;i++){
+                for(j=0;j< y;j++){
+                cout<< setw(5)<< mata[i][j]+matb[i][j];
+                }
+                cout<< endl;}
+                return 0;}
+
+        </pre>
+        <h2>
+            Output:
+        </h2>
+        <pre>
+Enter the rows and columns : 2
+4
+Enter elements of Matrix A 
+3
+2
+32
+44
+11
+63
+42
+77
+Enter elements of Matrix B
+23
+31
+37
+92
+37
+82
+70
+11
+A Matrix : 
+    3    2   32   44
+   11   63   42   77
+B Matrix : 
+   23   31   37   92
+   37   82   70   11
+A+B Matrix : 
+   26   33   69  136
+   48  145  112   88
+        </pre>
+    </body>
+</html>

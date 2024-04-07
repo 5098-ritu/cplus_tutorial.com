@@ -1,0 +1,59 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Insert a string into another string:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                
+                std::string insert_string(const std::string& base_str, const std::string& insert_str, int position) {
+                    // Check if the position is valid
+                    if (position < 0 || position > base_str.length()) {
+                        std::cerr << "Error: Invalid position." << std::endl;
+                        return base_str; // Return the original string if position is invalid
+                    }
+                
+                    // Insert the string at the specified position
+                    return base_str.insert(position, insert_str);
+                }
+                
+                int main() {
+                    std::string base_string, insert_string;
+                    int position;
+                
+                    // Input base string
+                    std::cout << "Enter the base string: ";
+                    std::getline(std::cin, base_string);
+                
+                    // Input string to insert
+                    std::cout << "Enter the string to insert: ";
+                    std::getline(std::cin, insert_string);
+                
+                    // Input position
+                    std::cout << "Enter the position to insert at: ";
+                    std::cin >> position;
+                
+                    // Insert the string into the base string at the specified position
+                    std::string result_string = insert_string(base_string, insert_string, position);
+                
+                    // Output result
+                    std::cout << "Result string: " << result_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the base string:
+            hello people
+            Enter the string to insert:
+            beautiful
+            Enter the position to insert at:
+            2
+            Result string:
+            hello beautiful people
+        </pre>
+    </body>
+</html>

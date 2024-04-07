@@ -1,0 +1,43 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to remove all the white spaces from a string:</h2>
+        <pre>
+            #include < iostream>
+                #include < string>
+                
+                std::string remove_spaces(const std::string& str) {
+                    std::string result;
+                    for (char c : str) {
+                        if (!isspace(c)) { // Check if character is not a white space
+                            result.push_back(c);
+                        }
+                    }
+                    return result;
+                }
+                
+                int main() {
+                    std::string input_string;
+                
+                    // Input string
+                    std::cout << "Enter a string: ";
+                    std::getline(std::cin, input_string);
+                
+                    // Remove white spaces
+                    std::string result_string = remove_spaces(input_string);
+                
+                    // Output result
+                    std::cout << "String with white spaces removed: " << result_string << std::endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: this is me!
+            String with white spaces removed: thisisme!      
+        </pre>
+    </body>
+</html>
