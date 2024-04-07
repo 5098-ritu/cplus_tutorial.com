@@ -1,0 +1,72 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to read a CSV file and display its contents in tabular form:</h2>
+        <pre>
+            #include < iostream.h >
+            #include < fstream.h >
+            #include < sstream.h >
+            #include < vector.h >
+            #include < string.h >
+            
+            void displayCSV(const std::string& filename) {
+                // Open the CSV file for reading
+                std::ifstream file(filename);
+            
+                // Check if the file is opened successfully
+                if (!file) {
+                    std::cerr << "Failed to open the file: " << filename << std::endl;
+                    return;
+                }
+            
+                // Read each line of the CSV file and display its contents in tabular form
+                std::string line;
+                while (std::getline(file, line)) {
+                    std::istringstream iss(line);
+                    std::vector<std::string> columns;
+                    std::string column;
+                    while (std::getline(iss, column, ',')) {
+                        columns.push_back(column);
+                    }
+                    // Display each column separated by tabs
+                    for (const auto& col : columns) {
+                        std::cout << col << "\t";
+                    }
+                    std::cout << std::endl;
+                }
+            
+                // Close the file
+                file.close();
+            }
+            
+            int main() {
+                // Specify the CSV file name
+                std::string filename = "data.csv";
+            
+                // Display the contents of the CSV file in tabular form
+                displayCSV(filename);
+            
+                return 0;
+            }
+            
+
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            CSV file contains the following data:
+            Name, Age, City
+            John, 25, New York
+            Alice, 30, Los Angeles
+            
+            The output of the program will be:
+            
+            Name     Age    City    
+            John     25     New York    
+            Alice    30     Los Angeles    
+            
+            Each column will be aligned using tabs to create a tabular representation of the CSV data.        
+        </pre>
+    </body>
+</html>

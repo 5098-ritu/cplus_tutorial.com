@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to count total number of notes in entered amount using loop:</h2>
+        <pre>
+            #include<  iostream.h>
+                #include< conio.h>
+                void main(){
+                int i,amount;
+                clrscr();
+                int arr[9]={2000,500,100,50,20,10,5,2,1};
+                cout<<"Enter the amount=";
+                cin>>amount;
+                for(i=0;i<`9;i++)
+                {
+                cout<<`arr[i]<<"\tNote:"<<(amount/arr[i])<<(endl);
+                amount=amount%arr[i];
+                }getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            
+Enter the amount=350
+2000    Note:0
+500     Note:0
+100     Note:3
+50      Note:1
+20      Note:0
+10      Note:0
+5       Note:0
+2       Note:0
+1       Note:0
+
+Enter the amount=35000
+2000    Note:17
+500     Note:2
+100     Note:0
+50      Note:0
+20      Note:0
+10      Note:0
+5       Note:0
+2       Note:0
+1       Note:0
+            
+        </pre>
+    </body>
+</html>

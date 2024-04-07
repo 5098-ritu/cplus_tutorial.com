@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to trim a string (remove whitespaces):</h2>
+        <pre>
+            include< iostream.h>
+                #include< conio.h>
+                #include< string.h>
+                void removeSpaces(char *str)
+                {
+                clrscr();
+                int count=0;
+                for(int i=0;str[i];i++)
+                if(str[i]!=' ')
+                str[count++]=str[i];
+                str[count]='\0';
+                }
+                void main()
+                {
+                char str[80]="rem oving wh ite sp ac es";
+                removeSpaces(str);
+                cout<<(str);
+                getch();
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            removingwhitespaces
+        </pre>
+    </body>
+</html>

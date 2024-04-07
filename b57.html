@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to check vowel or consonant:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                char ch;
+                cout<<"Enter the character : ";
+                cin>>ch;
+                if (isalpha(ch)){
+                    if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U'){
+                       cout<<"Vowel";}
+                    else{
+                        cout<<"Consonant ";
+                    }
+                }
+                else{
+                    cout<<"Not an alphabet ";
+                }
+                getch();} 
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the character :
+            5
+            Not an alphabet
+            Enter the character :
+            u
+            Vowel
+        </pre>
+    </body>
+</html>

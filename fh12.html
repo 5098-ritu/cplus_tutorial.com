@@ -1,0 +1,86 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to encrypt the contents of a text file using a simple encryption algorithm:</h2>
+        <pre>
+            #include < iostream.h >
+#include < fstream.h >
+#include < string.h >
+
+void encryptFile(const std::string& inputFileName, const std::string& outputFileName) {
+    // Open the input file for reading
+    std::ifstream inputFile(inputFileName);
+
+    // Check if the input file is opened successfully
+    if (!inputFile) {
+        std::cerr << "Failed to open the input file.\n";
+        return;
+    }
+
+    // Open the output file for writing
+    std::ofstream outputFile(outputFileName);
+
+    // Check if the output file is opened successfully
+    if (!outputFile) {
+        std::cerr << "Failed to create the output file.\n";
+        return;
+    }
+
+    // Encryption key (you can change this to any other value)
+    int key = 3;
+
+    // Encrypt each character and write to the output file
+    char ch;
+    while (inputFile.get(ch)) {
+        ch = ch + key;
+        outputFile << ch;
+    }
+
+    // Close the files
+    inputFile.close();
+    outputFile.close();
+
+    std::cout << "File encrypted successfully.\n";
+}
+
+int main() {
+    // Specify the input and output filenames
+    std::string inputFileName = "input.txt";
+    std::string outputFileName = "encrypted_output.txt";
+
+    // Call the function to encrypt the file
+    encryptFile(inputFileName, outputFileName);
+
+    return 0;
+}
+
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            File encrypted successfully.
+
+            Content of file.
+            program
+            
+            POSSIBLE VALUES OF e AND d ARE
+            5
+            29
+            11
+            59
+            17
+            17
+            19
+            23
+            19
+            47
+            5
+            29
+            7
+            31
+            THE ENCRYPTED MESSAGE IS
+            -ifiam      
+        </pre>
+    </body>
+</html>

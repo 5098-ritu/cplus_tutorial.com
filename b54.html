@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program that takes a year from user and print whether that year is a leap year or not:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int y;
+                cout<<"Enter the year : ";
+                cin>>y;
+                if(y%4==0 && y%100!=0 || y%400==0){
+                    cout<<"Leap year ";
+                }
+                else{
+                    cout<<"Not a leap year ";
+                }
+                getch();}
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the year : 2022
+            Not a leap year
+
+            Enter the year : 2024
+            Leap year
+        </pre>
+    </body>
+</html>

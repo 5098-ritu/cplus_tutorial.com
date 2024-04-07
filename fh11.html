@@ -1,0 +1,73 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to search for a specific string in a text file and display its line number(s):</h2>
+        <pre>
+            #include < iostream.h >
+#include < fstream.h >
+#include < string.h >
+#include < vector.h >
+
+void searchAndDisplay(const std::string& filename, const std::string& searchString) {
+    // Open the text file for reading
+    std::ifstream inFile(filename);
+
+    // Check if the file is opened successfully
+    if (!inFile) {
+        std::cerr << "Failed to open the file.\n";
+        return;
+    }
+
+    // Initialize variables
+    std::string line;
+    std::vector<int> lineNumbers;
+    int lineNumber = 0;
+
+    // Search for the string in each line
+    while (std::getline(inFile, line)) {
+        lineNumber++;
+        size_t pos = line.find(searchString);
+        if (pos != std::string::npos) {
+            // String found, display the line number
+            lineNumbers.push_back(lineNumber);
+        }
+    }
+
+    // Close the file
+    inFile.close();
+
+    // Display the line number(s) where the string was found
+    if (lineNumbers.empty()) {
+        std::cout << "String '" << searchString << "' not found in the file.\n";
+    } else {
+        std::cout << "String '" << searchString << "' found in line(s): ";
+        for (int num : lineNumbers) {
+            std::cout << num << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    // Specify the filename and the string to search
+    std::string filename = "text_file.txt";
+    std::string searchString = "specific_string";
+
+    // Call the searchAndDisplay function to search for the string
+    searchAndDisplay(filename, searchString);
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            String 'specific_string' found in line(s): 3 7
+
+            If the string is not found in the file, the output might be:
+            
+            String 'specific_string' not found in the file.       
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to calculate the average of numbers stored in a file:</h2>
+        <pre>
+            #include < iostream.h >
+#include < fstream.h >
+#include < vector.h >
+#include < numeric.h >
+#include < iomanip.h >
+
+double calculateAverage(const std::string& filename) {
+    // Open the file for reading
+    std::ifstream file(filename);
+
+    // Check if the file is opened successfully
+    if (!file) {
+        std::cerr << "Failed to open the file: " << filename << std::endl;
+        return 0.0;
+    }
+
+    // Read numbers from the file into a vector
+    std::vector<double> numbers;
+    double number;
+    while (file >> number) {
+        numbers.push_back(number);
+    }
+
+    // Close the file
+    file.close();
+
+    // Calculate the sum of numbers
+    double sum = std::accumulate(numbers.begin(), numbers.end(), 0.0);
+
+    // Calculate the average
+    double average = sum / numbers.size();
+
+    return average;
+}
+
+int main() {
+    // Specify the filename containing numbers
+    std::string filename = "numbers.txt";
+
+    // Calculate the average of numbers stored in the file
+    double avg = calculateAverage(filename);
+
+    // Display the average with 2 decimal places
+    std::cout << "Average of numbers in the file: " << std::fixed << std::setprecision(2) << avg << std::endl;
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            following numbers:
+            10
+            20
+            30
+
+            Average of numbers in the file: 20.00      
+        </pre>
+    </body>
+</html>

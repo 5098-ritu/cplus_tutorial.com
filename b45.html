@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to calculate compound interest:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                #include< math.h>
+                void main()
+                {
+                float p,r,t,si,ci;
+                cout<<"\Enter the value of  Principle ,Rate ,Time:";
+                cin>>p>>r>>t;
+                si=(p*r*t)/100;
+                ci=p*pow((1+r/100),t)-p;
+                cout<<"\nSimple interset is="<<(si);
+                cout<<"\nCompound interset is="<<(ci);
+                getch();
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+           Enter the value of  Principle ,Rate ,Time:34
+            56
+            43
+
+            Simple interset is=818.72
+            Compound interset is=6.85229e+009
+        </pre>
+    </body>
+</html>

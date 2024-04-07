@@ -1,0 +1,42 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program that reads a set of integers, and then prints the sum of the even and odd integers using loop:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void  main(){
+                int n,e=0,o=0;
+                cout<<"Enter the number of integers you want to add: ";
+                cin>>n;
+                cout<<"Enter "<<(n)<<" integers : ";
+                int temp;
+                for(int i=0;i<`n;i++){
+                    cin>>temp;
+                    if(temp&1==1){
+                        o+=temp;
+                    }
+                    else{
+                        e+=temp;
+                    }
+                }
+                cout<<"Sum of odd integers : "<<(o)<<(endl);
+                cout<<"Sum of even integers : "<<(e);
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the number of integers you want to add: 4
+            Enter 4 integers : 44
+            5
+            9
+            67
+            Sum of odd integers : 81
+            Sum of even integers : 44
+
+            
+        </pre>
+    </body>
+</html>

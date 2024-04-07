@@ -1,0 +1,37 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to find the factorial value of any number entered through the keyboard:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int n,f=1;
+                cout<<"Enter the number you want factorial : ";
+                cin>>n;
+                if(n>0){
+                for(int i=1;i<`n+1;i++){
+                   f=f*i;
+                }
+                cout<<"Factorial of "<<(n)<<" : "<<(f);}
+                else if(n==0){
+                    cout<<"Factorial of "<<(n)<<" : "<<(1);
+                }
+                else{
+                    cout<<"Not define";
+                }
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the number you want factorial : 
+            8
+            Factorial of 8:
+            40320
+            
+        </pre>
+    </body>
+</html>

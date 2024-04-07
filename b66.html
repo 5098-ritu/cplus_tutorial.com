@@ -1,0 +1,65 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a simple calculator (1. ADDITION, 2. SUBTRACTION, 3. MULTIPLICATION, 4. DIVISION, 5. EXPONENTIAL, 6. PERCENTAGE, 7. EXIT):</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int c=0,a,b;
+                while(1){
+                cout<<(endl)<<"Enter the choice for the operation in integer you want to perform :"<<(endl);
+                cout<<"1.ADDITION\t2.SUBTRACTION\n3.MULTIPLICATION  4.DIVISION\n5.EXPONENTIAL\t6.PERCENTAGE\n7.EXIT : ";
+                cin>>c;
+                if(c==7){
+                  cout<<"Exited";
+                  break;
+                }
+                cout<<"Enter A and B : ";
+                cin>>a>>b;
+                if(c==1){
+                  cout<<"Addition : "<<(a+b);
+                }
+                else if(c==2){
+                  cout<<"Subtraction (B-A) : "<<(b-a);
+                }
+                else if(c==3){
+                  cout<<"Multiplication : "<<(a*b);
+                }
+                else if(c==4){
+                  cout<<"Division (B/A) : "<<(b/a);
+                }
+                else if(c==5){
+                  cout<<"Exponential (A^B): "<<(pow(a,b));
+                }
+                else if(c==6){
+                  cout<<"Percentage (A/B*100) : "<<(float)a/b*100;
+                }
+                else{
+                  cout<<"Invalid Choice";
+                }
+                }getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter the choice for the operation in integer you want to perform :
+          1.ADDITION      2.SUBTRACTION
+          3.MULTIPLICATION  4.DIVISION
+          5.EXPONENTIAL   6.PERCENTAGE
+          7.EXIT :
+          4
+          Enter A and B : 25
+          5
+          Division (B/A) : 5
+          Enter the choice for the operation in integer you want to perform :
+          1.ADDITION      2.SUBTRACTION
+          3.MULTIPLICATION  4.DIVISION
+          5.EXPONENTIAL   6.PERCENTAGE
+          7.EXIT : 7
+          Exited
+            
+        </pre>
+    </body>
+</html>

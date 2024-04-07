@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <h2> Write a C++ program to print out all Armstrong numbers between 1 to 600 using loop:
+        </h2>
+        <pre>
+            include< iostream.h>
+                #include< conio.h>
+                void main(){
+                int x, n,r,sum;
+                cout<<"Armstrong Number are:";
+                for(n=1;n<=600;n++)
+                {
+                sum=0;
+                x=n;
+                while(x>0){
+                r=x%10;
+                sum=sum+(r*r*r);
+                x=x/10;
+                }
+                if(sum==n)
+                cout<<(n)<<" ";
+            }
+            getch();
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Armstrong Number are:1 153 370 371 407 
+        </pre>
+    </body>
+</html>

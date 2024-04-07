@@ -1,0 +1,42 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to remove a particular character from a string:</h2>
+        <pre>
+                #include< iostream.h>
+                #include< conio.h>
+                #include< string.h>
+                void main()
+                {
+                char st1[30]="Hello how do you do";
+                cout<<"String  : "<<(st1)<<(endl);
+                char ch;
+                cout<<"Enter the character you want to remove from the string : ";
+                cin>>ch;
+                int len=strlen(st1);
+                for(int i=0;i<`len;i++){ 
+                    if(st1[i]==ch){
+                        for(int j=i;j<`len;j++){
+                        if(j==(len-1)){
+                            st1[j]='\0';
+                        }
+                        else{
+                        st1[j]=st1[j+1];
+                        }}
+                        break;
+                    }   
+                }
+                cout<<"String after removal of given character : "<<(st1);
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+
+        <pre>
+            Enter the character you want to remove from the string :
+            o
+            String after removal of given character :
+            hell hw d yu d
+        </pre>
+    </body>
+</html>

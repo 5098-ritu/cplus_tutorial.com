@@ -1,0 +1,60 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to merge multiple text files into a single file:</h2>
+        <pre>
+            #include < iostream.h >
+#include < fstream.h >
+#include < vector.h >
+#include < string.h >
+
+int main() {
+    // List of input files to merge
+    std::vector<std::string> inputFiles = {"file1.txt", "file2.txt", "file3.txt"};
+
+    // Open the output file for writing
+    std::ofstream outFile("merged_file.txt");
+
+    // Check if the output file is opened successfully
+    if (!outFile) {
+        std::cerr << "Failed to create the output file.\n";
+        return 1;
+    }
+
+    // Iterate through each input file
+    for (const auto& inputFile : inputFiles) {
+        // Open the input file for reading
+        std::ifstream inFile(inputFile);
+
+        // Check if the input file is opened successfully
+        if (!inFile) {
+            std::cerr << "Failed to open the input file: " << inputFile << std::endl;
+            continue; // Skip to the next file
+        }
+
+        // Copy contents from input file to output file
+        std::string line;
+        while (std::getline(inFile, line)) {
+            outFile << line << '\n';
+        }
+
+        // Close the input file
+        inFile.close();
+    }
+
+    // Close the output file
+    outFile.close();
+
+    std::cout << "Files merged successfully.\n";
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Files merged successfully.       
+        </pre>
+    </body>
+</html>

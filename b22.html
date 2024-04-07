@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to check if a positive number is a palindrome or not:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int n;
+                   cout<<"Enter the number : ";
+                   cin>>n;
+                   if(n>=0){
+                      int temp=n,p=0;
+                      while(n>0){
+                        p=p*10+(n%10);
+                        n=n/10;
+                      }
+                      if (temp==p){
+                        cout<<"Pallindrome";
+                      }
+                      else{
+                        cout<<"Not a Pallindrome";
+                      }
+                   }
+                   else{
+                    cout<<"Negative number ";
+                   }
+                   getch();}
+
+        </pre>
+    </body>
+    <h2>Output:</h2>
+    <pre>
+        Enter the number :
+        45
+        Not a Pallindrome
+
+    </pre>
+</html>

@@ -1,0 +1,43 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program that determines a student’s grade (81-100 : A, 61-80 : B, 41-60 : C, 0-40 : D):
+        </h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int m;
+                cout<<"Enter the numbers marks ";
+                cin>>m;
+                if(m>=81 && m<=100){
+                    cout<<"A Grade";
+                   } 
+                else if(m>=61 && m<=80){
+                    cout<<"B Grade";
+                   } 
+                else if(m>=41 && m<=60){
+                    cout<<"C Grade";
+                   } 
+                else if(m>=0 && m<=40){
+                    cout<<"D Grade";
+                   }
+                else{
+                    cout<<"Marks given are out of the range (0-100)";
+                   } 
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the numbers marks 
+            85
+            A Grade
+
+            Enter the numbers marks 
+            103
+            Marks given are out of the range (0-100)
+        </pre>
+    </body>
+</html>

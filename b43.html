@@ -1,0 +1,37 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to calculate electricity bill:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int unit;
+                double bill;
+                cout<<"Enter your electricity bill consumption in units:";
+                cin>>unit;
+                if(unit<=50){
+                bill=0.5*unit;}
+                else if(unit<=150){
+                bill=(0.5*50)+(0.75*(unit-50));
+                }
+                else if(unit<=250)
+                {
+                bill=(0.5*50)+(0.75*100)+(1.2*(unit -150));}
+                else{
+                bill=(0.5*50)+(0.75*100)+(1.2*100)+(1.5*(unit-250));
+                }
+                cout<<"Final bill is Rs:"<<(bill)<<(endl);
+                getch();
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter your electricity bill consumption in units:400
+            Final bill is Rs:200
+            
+        </pre>
+    </body>
+</html>

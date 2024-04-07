@@ -1,0 +1,38 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to accept an integer(n) and computes the value of n+nn+nnn:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int num,n,t,sum=0;
+                cout<<"Given equation:\n\tn+nn+nnn+....t times"<<(endl);
+                cout<<"Enter the number(n):";
+                cin>>num;
+                cout<<"Enter the no.of times(t):";
+                cin>>t;
+                n=num;
+                for(int i=1;i<=t;i++)
+                {
+                sum=sum+n;
+                n=n*10+num;
+                }
+                cout<<"Sum of given equation:"<<(sum)<<(endl);
+                getch();
+                }
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Given equation:
+        n+nn+nnn+........t times
+
+        Enter the no(n)3
+
+        Enter the no. of times (t):4
+
+        Sum of given equation:3702
+        </pre>
+    </body>
+</html>

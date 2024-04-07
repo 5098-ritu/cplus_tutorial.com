@@ -1,0 +1,70 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to sort the lines of a text file in alphabetical order:</h2>
+        <pre>
+            #include < iostream.h >
+#include < fstream.h >
+#include < vector.h >
+#include < algorithm.h >
+
+int main() {
+    // Open the text file for reading
+    std::ifstream inFile("input.txt");
+
+    // Check if the file is opened successfully
+    if (!inFile) {
+        std::cerr << "Failed to open the file.\n";
+        return 1;
+    }
+
+    // Read lines from the file into a vector
+    std::vector<std::string> lines;
+    std::string line;
+    while (std::getline(inFile, line)) {
+        lines.push_back(line);
+    }
+
+    // Close the file
+    inFile.close();
+
+    // Sort the lines in alphabetical order
+    std::sort(lines.begin(), lines.end());
+
+    // Open the same file for writing (will overwrite existing content)
+    std::ofstream outFile("input.txt");
+
+    // Check if the file is opened successfully
+    if (!outFile) {
+        std::cerr << "Failed to open the file.\n";
+        return 1;
+    }
+
+    // Write the sorted lines to the file
+    for (const auto& sortedLine : lines) {
+        outFile << sortedLine << '\n';
+    }
+
+    // Close the file
+    outFile.close();
+
+    std::cout << "Lines sorted in alphabetical order and written back to the file successfully.\n";
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            content of file :
+            The file will be exist in this folder.
+            
+            content of writting mode:
+            The file will be exist in this folder.
+            Thank you.
+            
+            "Lines sorted in alphabetical order and written back to the file successfully.       
+        </pre>
+    </body>
+</html>

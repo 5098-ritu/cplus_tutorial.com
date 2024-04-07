@@ -1,0 +1,34 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to calculate HCF of Two given numbers using loop:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void  main(){
+                int a,b,r;
+                cout<<"Enter the number A and B : ";
+                cin>>a>>b;
+                if(a>b){
+                    r=b;
+                   }
+                   else{
+                    r=a;
+                }
+                while(r>0){
+                  if(a%r==0 && b%r==0){
+                    break;}
+                  r--;}
+                cout<<"HCf of "<<(a)<<" and "<<(b)<<" : "<<(r);
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter the number A and B : 23
+          43
+          HCf of 23 and 43 : 1
+        </pre>
+    </body>
+</html>

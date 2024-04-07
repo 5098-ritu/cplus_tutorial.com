@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ Program to Accept the Marks of a Student and find Total Marks and Percentage:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                int n,a=0;
+                cout<<"Enter the no. of subjects : ";
+                cin>>n;
+                cout<<"Marks should be out of 100"<<(endl);
+                cout<<"Enter the marks of "<<(n)<<" subjects : ";
+                for(int i=0;i<`n;i++){
+                    int temp;
+                    cin>>temp;
+                    a=a+temp;
+                }
+                cout<<"Total marks of student : "<<(a)<<(endl);
+                cout<<"Percentage : "<<(float)a/n<<"%";
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+
+        <pre>
+            Enter the no. of subjects : 4
+            Marks should be out of 100
+            Enter the marks of 4 subjects : 89
+            88
+            76
+            71
+            Total marks of student : 324
+            Percentage : 81%
+
+        </pre>
+    </body>
+</html>

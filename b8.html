@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to convert binary to decimal number:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                #include< math.h>
+                void main()
+                {
+                int i,rem,count=0;
+                long int b,n=0;
+                clrscr();
+                cout<<"\nEnter binary  number:";
+                cin>>b;
+                while(b>0){
+                rem=b%10;
+                n=n+rem*pow(2,count);
+                count=count+1;
+                b=b/10;}
+                cout<<"Decimal Equivalent="<<(n));
+                getch();
+                }
+            
+        </pre>
+        <h2>
+            Output:
+        </h2>
+        <pre>
+            Enter binary no:0001
+
+            Decimal equivalent=1
+        </pre>
+    </body>
+</html>

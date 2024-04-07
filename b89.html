@@ -1,0 +1,40 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {int h,temp,n=0,p=0,z=0;
+                cout<<"Enter the times you want input integers: ";
+                cin>>h;
+                cout<<"Enter the integers : ";
+                for(int i=0;i<`h;i++){
+                    cin>>temp;
+                    if(temp>0){
+                       p++; }
+                    else if(temp<`0){
+                        n++; }
+                    else{
+                        z++;}}
+                cout<<"Number of Positive integer given : "<<(p)<<(endl);
+                cout<<"Number of Negative integer given : "<<(n)<<(endl);
+                cout<<"Number of Zeroes given : "<<(z)<<(endl);
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the times you want input integers: 3
+            Enter the integers : 23
+            34
+            13
+            Number of Positive integer given : 3
+            Number of Negative integer given : 0
+            Number of Zeroes given : 0
+            
+        </pre>
+    </body>
+</html>

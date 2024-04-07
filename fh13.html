@@ -1,0 +1,85 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Write a C++ program to decrypt the contents of a text file encrypted using the above algorithm:</h2>
+        <pre>
+            #include < iostream.h >
+#include < fstream.h >
+#include < string.h >
+
+void decryptFile(const std::string& inputFileName, const std::string& outputFileName) {
+    // Open the input file for reading
+    std::ifstream inputFile(inputFileName);
+
+    // Check if the input file is opened successfully
+    if (!inputFile) {
+        std::cerr << "Failed to open the input file.\n";
+        return;
+    }
+
+    // Open the output file for writing
+    std::ofstream outputFile(outputFileName);
+
+    // Check if the output file is opened successfully
+    if (!outputFile) {
+        std::cerr << "Failed to create the output file.\n";
+        return;
+    }
+
+    // Decryption key (must be the same as the encryption key)
+    int key = 3;
+
+    // Decrypt each character and write to the output file
+    char ch;
+    while (inputFile.get(ch)) {
+        ch = ch - key; // Reverse the encryption process
+        outputFile << ch;
+    }
+
+    // Close the files
+    inputFile.close();
+    outputFile.close();
+
+    std::cout << "File decrypted successfully.\n";
+}
+
+int main() {
+    // Specify the input and output filenames
+    std::string inputFileName = "encrypted_output.txt";
+    std::string outputFileName = "decrypted_output.txt";
+
+    // Call the function to decrypt the file
+    decryptFile(inputFileName, outputFileName);
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            File decrypted successfully.
+
+            Content file:
+            program
+            
+            POSSIBLE VALUES OF e AND d ARE
+            5
+            29
+            11
+            59
+            17
+            17
+            19
+            23
+            19
+            47
+            5
+            29
+            7
+            31 
+            THE DECRYPTED MESSAGE IS
+            program        
+        </pre>
+    </body>
+</html>

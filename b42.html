@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ program to find factorial of any number:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                clrscr();
+                long int fact(int);
+                long int k;
+                int num;
+                cout<<"Enter a number=";
+                cin>>num;
+                k=fact(num);
+                cout<<"Factorial="<<(k);
+                getch();
+                }
+                long int fact(int x)
+                {
+                long int pro=1;
+                if(x==0||x==1)
+                pro=1;
+                else
+                {
+                for(int i=2;i<=x;i++)
+                pro=pro*i;
+                }
+                return(pro);
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a number=5
+            Factorial=120
+            
+        </pre>
+    </body>
+</html>

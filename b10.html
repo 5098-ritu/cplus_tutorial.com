@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to compute the sum of the digit of an integer:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                clrscr();
+                long int num,x,sum=0;
+                cout<<"Enter a number=";
+                cin>>num;
+                while(num>0)
+                {
+                x=num%10;
+                sum=sum+x;
+                num=num/10;
+                }
+                cout<<"Sum of digit of a integer="<<(sum);
+                getch();
+                }
+            
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a number=
+            34
+            Sum of digit of a integer=7
+        </pre>
+    </body>
+</html>

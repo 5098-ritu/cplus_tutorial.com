@@ -1,0 +1,42 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to reverse a String:</h2>
+        <pre>
+                #include< iostream.h>
+                #include< conio.h>
+                void main()
+                {
+                clrscr();
+                void string_reverse(char str[]);
+                char str[40];
+                cout<<"Enter string to be reversed:"<<(endl);
+                cin>>str;
+                string_reverse(str);
+                cout<<"Reversed string is:"<<(str)<<(endl);
+                getch();}
+                void string_reverse(char s[])
+                {
+                int i,j,count=0;
+                char temp[40];
+                for(i=0;s[i]!='\0';i++)
+                {temp[i]=s[i];
+                count++;
+                }
+                for(j=count-1,i=0;j>=0;j--,i++)
+                s[i]=temp[j];
+                s[i]='\0';}
+                
+
+        </pre>
+        <h2>Output:</h2>
+
+        <pre>
+            Enter string to be reversed:
+            helloworld
+            Reversed string is:
+            dlrowolleh
+
+        </pre>
+    </body>
+</html>

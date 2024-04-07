@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to print Fibonacci series of n terms where n is input by user using loop:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                #include< iomanip.h>
+                void main()
+                {
+                int a,b,c,n;
+                a=0;b=1;
+                clrscr();
+                cout<<"Enter number of terms(n)=";
+                cin>>n;
+                cout<<"Fibonacci Series is:"<<(endl);
+                cout<<(a)<<(setw(4)<<(b);
+                int count=3;
+                while(count<=n){
+                c=a+b;
+                cout<<(setw(4))<<(c);
+                a=b;
+                b=c;
+                count++;}
+                getch();}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter number of terms(n)=9
+            Fibonacci Series is:
+            0   1   1   2   3   5   8  13  21
+            
+        </pre>
+    </body>
+</html>
