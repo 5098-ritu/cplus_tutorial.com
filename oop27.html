@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables:</h2>
+        <pre>
+            #include < iostream.h>
+
+                class Rectangle {
+                private:
+                    double len;
+                    double wid;
+                
+                public:
+                    void setter(double length, double width) {
+                        len = length;
+                        wid = width;
+                    }
+                
+                    void getter() const {
+                        cout << "Length: " << len << ", Width: " << wid << endl;
+                    }
+                };
+                
+                int main() {
+                    Rectangle rect;
+                    rect.setter(5.0, 3.0);
+                    cout << "Rectangle Dimensions: ";
+                    rect.getter();
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Rectangle Dimensions: Length: 5, Width: 3      
+        </pre>
+    </body>
+</html>

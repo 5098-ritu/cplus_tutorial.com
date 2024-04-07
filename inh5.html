@@ -1,0 +1,72 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class known as "BankAccount" with methods called deposit() and withdraw(). Create a derived class called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred:</h2>
+        <pre>
+            #include < iostream >
+using namespace std;
+
+class BankAccount {
+protected:
+    double balance;
+
+public:
+    BankAccount(double initial_balance) : balance(initial_balance) {}
+
+    void deposit(double amount) {
+        balance += amount;
+        cout << "Deposit of $" << amount << " successful." << endl;
+    }
+
+    virtual void withdraw(double amount) {
+        if (balance > = amount) {
+            balance - = amount;
+            cout << "Withdrawal of $" << amount << " successful." << endl;
+        } else {
+            cout << "Insufficient funds for withdrawal." << endl;
+        }
+    }
+
+    double getBalance() const {
+        return balance;
+    }
+};
+
+class SavingsAccount : public BankAccount {
+public:
+    SavingsAccount(double initial_balance) : BankAccount(initial_balance) {}
+
+    void withdraw(double amount) override {
+        if (balance > = amount && balance - amount > = 100) {
+            balance -= amount;
+            cout << "Withdrawal of $" << amount << " successful." << endl;
+        } else {
+            cout << "Withdrawal failed. Minimum balance requirement not met." << endl;
+        }
+    }
+};
+
+int main() {
+    SavingsAccount savings(200); // Creating a savings account with initial balance $200
+    savings.withdraw(50);       // Withdrawing $50, should be successful
+    cout << "Current balance: $" << savings.getBalance() << endl;  // Displaying current balance
+    savings.withdraw(150);      // Withdrawing $150, should fail due to insufficient balance
+    cout << "Current balance: $" << savings.getBalance() << endl;  // Displaying current balance
+    savings.withdraw(50);       // Withdrawing $50, should be successful
+    cout << "Current balance: $" << savings.getBalance() << endl;  // Displaying current balance
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Withdrawal of $50 successful.
+            Current balance: $150
+            Withdrawal failed. Minimum balance requirement not met.
+            Current balance: $150
+            Withdrawal of $50 successful.
+            Current balance: $100     
+        </pre>
+    </body>
+</html>

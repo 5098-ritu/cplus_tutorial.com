@@ -1,0 +1,38 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to find the maximum and minimum value of an array:</h2>
+        <pre>
+            #include< iostream.h>
+    
+                int main(){
+                  int ar[]={12,22,3,6,8,9,7,11};
+                  int max=ar[0],min=ar[0];
+                  cout<<"Array : "<< endl;
+                  int l=sizeof(ar)/sizeof(int);
+                  for(int i=0;i< l;i++){
+                    cout<< ar[i]<<" ";  
+                  }
+                  for(int i=0;i< l;i++){
+                    if(max< ar[i]){
+                      max=ar[i];
+                    }
+                    else if(min>ar[i]){
+                      min=ar[i];
+                    }
+                  }
+                  cout<< endl<<"Maximum value of array : "<< max<< endl;
+                  cout<<"Minimum value of array : "<< min;
+                  return 0;}
+                
+
+        </pre>
+        <h2>Ouptut:</h2>
+        <pre>
+          Array : 
+          12 22 3 6 8 9 7 11
+          Maximum value of array : 22
+          Minimum value of array : 3         
+        </pre>
+    </body>
+</html>

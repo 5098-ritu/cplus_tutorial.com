@@ -1,0 +1,54 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called "Dog" with a name and breed attribute. Create two instances of the "Dog" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< string.h>
+    
+                class Dog{
+                  char name[20];
+                  char breed[20];
+                  public:
+                  Dog(char a[],char b[]){
+                    strcpy(name,a);
+                    strcpy(breed,b);
+                  }
+                  void Display(){
+                    cout<<"Name and breed of the dog : "<< name<<" "<< breed<< endl;
+                  }
+                  void setter(){
+                    cout<<"Enter the new name : ";
+                    cin>>name;
+                    cout<<"Enter the new breed : ";
+                    cin>>breed;
+                  }
+                };
+                int main(){
+                  Dog d1("Ron","Bulldog"),d2("Tom","Rottweiler");
+                  cout<<"Using constructor : "<< endl;
+                  d1.Display();
+                  d2.Display();
+                  d1.setter();
+                  d2.setter();
+                  cout<<"Updated values using setter : "<< endl;
+                  d1.Display();
+                  d2.Display();
+                  return 0;}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Using constructor : 
+          Name and breed of the dog : Ron Bulldog
+          Name and breed of the dog : Tom Rottweiler
+          Enter the new name : Cheekoo
+          Enter the new breed : Husky
+          Enter the new name : Timmi
+          Enter the new breed : Bichon Frise
+          Updated values using setter : 
+          Name and breed of the dog : Cheekoo Husky
+          Name and breed of the dog : Timmi Bichon
+        </pre>
+    </body>
+</html>

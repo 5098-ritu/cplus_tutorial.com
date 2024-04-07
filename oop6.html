@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called "Employee" with a name, job title, and salary attributes, and methods to calculate and update salary:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< string.h>
+        
+                class Employee{
+                  string name;
+                  string jtitle;
+                  long long salary;
+                  public:
+                  void get(){
+                    cout<<"Enter the name of Employee : ";
+                    cin>>name;
+                    cout<<"Enter the job title : ";
+                    cin>>jtitle;
+                    cout<<"Enter the monthly salary : ";
+                    cin>>salary;
+                  }
+                  void ansalary(){
+                    cout<<"Annual Salary : "<< 12*salary<< endl;
+                  }
+                  void updatesalary(){
+                    cout<<"Enter the updated salary of the Employee : ";
+                    cin>>salary;
+                  }
+                };
+                int main(){
+                  Employee e1;
+                  e1.get();
+                  e1.ansalary();
+                  e1.updatesalary();
+                  return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter the name of Employee : Sunil
+          Enter the job title : CEO
+          Enter the monthly salary : 80000
+          Annual Salary : 960000
+          Enter the updated salary of the Employee : 90000
+        </pre>
+    </body>
+</html>

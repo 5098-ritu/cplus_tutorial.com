@@ -1,0 +1,55 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to find all twin prime numbers less than 100:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                #include< cmath>
+                
+                bool isPrime(int n)
+                {
+                    if(n<=1)
+                    return false;
+                    if(n<=3)
+                    return true;
+                    if(n%2==0||n%3==0)
+                    return false;
+                    for(int i=5;i*i<=n;i+=6)
+                    {
+                        if(n%i==0||n%(i+2)==0)
+                        return false;
+                    }
+                    return true;
+                }
+                int main()
+                {
+                    cout<<"Twin prime number less than 100: "<< endl;
+                    for(int i=2;i< 100;i++)
+                    {
+                        if(isPrime(i) && isPrime(i+2))
+                        {
+                            cout<< i<<" and "<< i+2<< endl;
+                        }
+                    }
+                    getch();
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Twin prime number less than 100: 
+            3 and 5
+            5 and 7
+            11 and 13
+            17 and 19
+            29 and 31
+            41 and 43
+            59 and 61
+            71 and 73
+            
+        </pre>
+    </body>
+</html>

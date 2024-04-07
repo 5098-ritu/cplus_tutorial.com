@@ -1,0 +1,83 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+        
+                class Car {
+                private:
+                    string comp;
+                    string modl;
+                    int year;
+                    double mile;
+                
+                public:
+                    void sComp(string company) {
+                        comp = company;
+                    }
+                
+                    void sModl(string model) {
+                        modl = model;
+                    }
+                
+                    void sYear(int yr) {
+                        year = yr;
+                    }
+                
+                    void uMile(double dist, double fuel) {
+                        if (fuel > 0) {
+                            mile = dist / fuel;
+                        } else {
+                            cout << "Error: Fuel consumption cannot be zero or negative." << endl;
+                        }
+                    }
+                
+                    string gComp() const {
+                        return comp;
+                    }
+                
+                    string gModl() const {
+                        return modl;
+                    }
+                
+                    int gYear() const {
+                        return year;
+                    }
+                
+                    double gMile() const {
+                        return mile;
+                    }
+                };
+                
+                int main() {
+                    Car myCar;
+                
+                    myCar.sComp("Toyota");
+                    myCar.sModl("Corolla");
+                    myCar.sYear(2020);
+                
+                    double dist = 3000.0;
+                    double fuel = 200.0;
+                    myCar.uMile(dist, fuel);
+                
+                    cout << "Company Name: " << myCar.gComp() << endl;
+                    cout << "Model Name: " << myCar.gModl() << endl;
+                    cout << "Year: " << myCar.gYear() << endl;
+                    cout << "Mileage: " << myCar.gMile() << " km/l" << endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Company Name: Toyota
+            Model Name: Corolla
+            Year: 2020
+            Mileage: 15 km/l       
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Animal with a method named move(). Create a derived class called Cheetah that overrides the move() method to run:</h2>
+        <pre>
+            #include < iostream >
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    virtual void move() {
+        cout << "Some generic movement" << endl;
+    }
+};
+
+// Derived class
+class Cheetah : public Animal {
+public:
+    void move() override {
+        cout << "Cheetah is running" << endl;
+    }
+};
+
+int main() {
+    // Creating an object of the derived class
+    Cheetah cheetah;
+    // Calling the overridden method
+    cheetah.move();
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Cheetah is running        
+        </pre>
+    </body>
+</html>

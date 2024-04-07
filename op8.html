@@ -1,0 +1,37 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Define a class Time to represent time. Overload the << operator to display the time in HH:MM format:</h2>
+        <pre>
+            #include< iostream.h>
+                
+                class Time{
+                  int hour;
+                  int min;
+                  public:
+                  Time(int a,int b){
+                     hour=a;
+                     min=b;
+                     simp();
+                  }
+                  friend ostream& operator <<(ostream &o,Time &t);
+                  void simp(){
+                    hour=hour+(min/60);
+                    min=min%60;
+                  }
+                };
+                ostream& operator <<(ostream &o,Time &t){
+                   o<< t.hour<<":"<< t.min<< endl;
+                }
+                int main(){
+                  Time t1(10,90);
+                  cout<<"Displaying Time in HH:MM format by overloading '<<' : "<< t1;
+                  return 0;}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Displaying Time in HH:MM format by overloading '<<' : 11:30
+        </pre>
+    </body>
+</html>

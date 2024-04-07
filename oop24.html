@@ -1,0 +1,38 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Create a class showing the area of circle and rectangle by method overloading:</h2>
+        <pre>
+            #include < iostream.h>
+                
+                class Shape {
+                public:
+                    double area(double radius) {
+                        return 3.14 * radius * radius;
+                    }
+                    double area(double length, double width) {
+                        return length * width;
+                    }
+                };
+                
+                int main() {
+                    Shape shape;
+                    double R = 5.0;
+                    double L = 4.0;
+                    double W = 3.0;
+                    cout << "Area of the circle with radius " << R << " is: " << shape.area(R) << endl;
+                    cout << "Area of the rectangle with length " << L << " and width " << W << " is: "
+                         << shape.area(L, W) << endl;
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Area of the circle with radius 5 is: 78.5
+            Area of the rectangle with length 4 and width 3 is: 12         
+        </pre>
+    </body>
+</html>

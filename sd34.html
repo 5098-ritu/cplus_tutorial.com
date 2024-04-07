@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to find second largest number from the array:</h2>
+        <pre>
+            #include< iostream.h>
+            
+                int main(){
+                  int ar[]={3,8,57,86,55,76,56};
+                  int lrt=ar[0],lrt2=lrt;
+                  cout<<"Array : "<< endl;
+                  int l=sizeof(ar)/sizeof(int);
+                  for(int i=0;i< l;i++){
+                    cout<< ar[i]<<" ";
+                  }
+                  for(int i=0;i< l;i++){
+                    if(lrt< ar[i]){
+                      lrt2=lrt;
+                      lrt=ar[i];}
+                    if(lrt2< ar[i] && ar[i]< lrt){
+                      lrt2=ar[i];
+                      }
+                  }
+                  cout<< endl<<"Second largest in an array : "<< lrt2; 
+                  return 0;}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Array : 
+          3 8 57 86 55 76 56 
+          Second largest in an array : 76       
+        </pre>
+    </body>
+</html>

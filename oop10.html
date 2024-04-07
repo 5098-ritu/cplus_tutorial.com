@@ -1,0 +1,88 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called "Student" with a name, grade, and courses attributes, and methods to add and remove courses:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< string.h>
+    
+                class course{
+                   string cname;
+                   public:
+                   void setc(){
+                     cin>>cname;
+                   }
+                   string proc(){
+                     return cname;
+                   }
+                };
+                class Student{
+                string name;
+                char grade;
+                course c[10];
+                int cno;
+                public:
+                Student(){
+                  cno=0;
+                }
+                void get(){
+                  cout<<"Name of the student : ";
+                  cin>>name;
+                  cout<<"Grade of the student : ";
+                  cin>>grade;
+                  }
+                void add(){
+                  cout<<"Name of the course : ";
+                  c[cno].setc();
+                  cno++;
+                }
+                int find(string ch){
+                   for(int i=0;i< cno;i++){
+                    if (c[i].proc()==ch){
+                      return  i;
+                    }
+                   }
+                   return -1;
+                }
+                void remove(string ch){
+                  int i=find(ch);
+                  if(i>=0){
+                    cout<< ch<<" course is removed.";
+                     for(int j=i;j< cno;j++){
+                        c[j]=c[j+1];
+                     }
+                     cno--;
+                  }
+                  else{
+                    cout<<"No course found with such name. ";
+                  }
+                }
+                };
+                int main(){
+                Student s1;
+                s1.get();
+                cout<<"Adding course : "<< endl;
+                s1.add();
+                s1.add();
+                cout<<"Removing course : "<< endl;
+                string ch;
+                cout<<"Enter the course name you want to remove : ";
+                cin>>ch;
+                s1.remove(ch);
+                return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Name of the student : Mohan
+          Grade of the student : A
+          Adding course : 
+          Name of the course : BCA
+          Name of the course : BBA
+          Removing course : 
+          Enter the course name you want to remove : BBA
+          BBA course is removed.       
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called "Employee" with a name, salary, and hire date attributes, and a method to calculate years of service:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< string.h>
+                
+                class Employee{
+                  string name;
+                  double salary;
+                  string hdate;
+                  public:
+                  void get(){
+                    cout<<"Enter the name of the employee : ";
+                    cin>>name;
+                    cout<<"Enter the salary : ";
+                    cin>>salary;
+                    cout<<"Enter the hire date in dd/mm/yyyy : ";
+                    cin>>hdate;
+                  }
+                  int serviceyear(){
+                    int l=hdate.length();
+                    string ch;
+                    int y=stoi(ch+hdate[l-4]+hdate[l-3]+hdate[l-2]+hdate[l-1]);
+                    return 2024-y;
+                      }
+                };
+                int main(){
+                Employee e1;
+                e1.get();
+                cout<<"Service year of the emplpoyee : "<< e1.serviceyear();
+                return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter the name of the employee : Rakesh
+          Enter the salary : 25000
+          Enter the hire date in dd/mm/yyyy : 12/2/22 
+          Service year of the emplpoyee : 2022         
+        </pre>
+    </body>
+</html>

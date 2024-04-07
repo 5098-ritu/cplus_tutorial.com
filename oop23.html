@@ -1,0 +1,88 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                
+                class Student {
+                private:
+                    static int rollCounter;
+                    int rn; 
+                    string nm; 
+                    string cl;
+                
+                public:
+                    Student() {
+                        rn = ++rollCounter;
+                    }
+                
+                    Student(string name, string className) : nm(name), cl(className) {
+                        rn = ++rollCounter;
+                    }
+                
+                    void display() {
+                        cout << "Roll No: " << rn << ", Name: " << nm << ", Class: " << cl << endl;
+                    }
+                };
+                
+                int Student::rollCounter = 0;
+                
+                int main() {
+                    Student students[10];
+                    string name, cName;
+                
+                    for (int i = 0; i < 10; ++i) {
+                        cout << "Enter name of student " << i + 1 << ": ";
+                        getline(cin, name);
+                        cout << "Enter class of student " << i + 1 << ": ";
+                        getline(cin, cName);
+                        students[i] = Student(name, cName);
+                    }
+                    cout << "Students Information:" << endl;
+                    for (int i = 0; i < 10; ++i) {
+                        students[i].display();
+                    }
+                
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter name of student 1: Raghav
+            Enter class of student 1: 12
+            Enter name of student 2: Vinay
+            Enter class of student 2: 10
+            Enter name of student 3: Sahil
+            Enter class of student 3: 9
+            Enter name of student 4: Sneha
+            Enter class of student 4: 12
+            Enter name of student 5: Taniya
+            Enter class of student 5: 11
+            Enter name of student 6: Suman
+            Enter class of student 6: 9
+            Enter name of student 7: Samit
+            Enter class of student 7: 8
+            Enter name of student 8: Anu
+            Enter class of student 8: 11
+            Enter name of student 9: Madhu
+            Enter class of student 9: 12
+            Enter name of student 10: Danny
+            Enter class of student 10: 12
+            Students Information:
+            Roll No: 11, Name: Raghav, Class: 12
+            Roll No: 12, Name: Vinay, Class: 10
+            Roll No: 13, Name: Sahil, Class: 9
+            Roll No: 14, Name: Sneha, Class: 12
+            Roll No: 15, Name: Taniya, Class: 11
+            Roll No: 16, Name: Suman, Class: 9
+            Roll No: 17, Name: Samit, Class: 8
+            Roll No: 18, Name: Anu, Class: 11
+            Roll No: 19, Name: Madhu, Class: 12
+            Roll No: 20, Name: Danny, Class: 12       
+        </pre>
+    </body>
+</html>

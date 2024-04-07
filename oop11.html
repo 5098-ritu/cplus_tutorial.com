@@ -1,0 +1,85 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called "Library" with a collection of books and methods to add and remove books:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< string.h>
+                
+                class Book{
+                  string title;
+                  string author;
+                  string ISBN;
+                  public:
+                  void get(){
+                    cout<<"Enter the title : ";
+                    cin>>title;
+                    cout<<"Enter the author : ";
+                    cin>>author;
+                    cout<<"Enter the ISBN : ";
+                    cin>>ISBN;
+                  }
+                  string gettitle(){
+                    return title;
+                  }
+                  string getauthor(){
+                    return author;
+                  }  
+                  string getISBN(){
+                    return ISBN;
+                  } 
+                };
+                int i=0;
+                class Library{
+                  Book c[30];
+                  public:
+                  void add(){
+                    c[i].get();
+                    i++;
+                  }
+                  int find(string ch){
+                    int m=0;
+                    for(m=0;m< i;m++){
+                       if(ch==c[m].getISBN()){
+                          return m;
+                       }
+                    }
+                    return -1;    
+                  }
+                  void remove(string ch){
+                    int a=find(ch);
+                    if(a>=0){
+                    cout<<"Book with title "<< c[a].gettitle()<<" is removed from the library ."<< endl;
+                    for(int j=a;j< i;j++){
+                      c[j]=c[j+1];
+                    }
+                    i--;}
+                    else{
+                      cout<<"No book found with this ISBN . "<< endl;
+                    }
+                  }
+                };
+                int main(){
+                  Library l1;
+                  l1.add();
+                  l1.add();
+                  string st;
+                  cout<<"Enter the ISBN of the book you want to remove : ";
+                  cin>>st;
+                  l1.remove(st);
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter the title : Ramayana
+          Enter the author : Valmiki
+          Enter the ISBN : 9788426432049
+          Enter the title : Mahabharata
+          Enter the author : Vyasa
+          Enter the ISBN : 9788476727683
+          Enter the ISBN of the book you want to remove : 9788426432049
+          Book with title Ramayana is removed from the library .          
+        </pre>
+    </body>
+</html>

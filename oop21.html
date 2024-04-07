@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Create a class showing an example of parameterized constructor:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+                
+                
+                class a {
+                private:
+                    int i;
+                public:
+                    a(int num) {
+                        i = num;
+                    }
+                    void display() {
+                        cout << "Value of i: " << i << " using parameterized constructor" << endl;
+                    }
+                };
+                
+                int main() {
+                    a obj(4);
+                    obj.display();
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Value of i: 4 using parameterized constructor       
+        </pre>
+    </body>
+</html>

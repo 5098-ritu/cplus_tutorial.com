@@ -1,0 +1,56 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+    
+                class Employee {
+                private:
+                    int employee_id;
+                    string employee_name;
+                    int employee_salary;
+                
+                public:
+                    void setEmployeeId(int id) {
+                        employee_id = id;
+                    }
+                
+                    void setEmployeeName(string name) {
+                        employee_name = name;
+                    }
+                    void setEmployeeSalary(int salary){
+                        employee_salary=salary;
+                    }
+                    int getEmployeeId(){
+                        return employee_id;
+                    }
+                    string getEmployeeName(){
+                        return employee_name;
+                    }
+                    string getEmployeeSalary() {
+                        return "Salary: Rs." + to_string(employee_salary);
+                    }
+                };
+                
+                int main() {
+                    Employee emp;
+                    emp.setEmployeeId(1001);
+                    emp.setEmployeeName("Vijay");
+                    emp.setEmployeeSalary(20000);
+                    cout << "Employee ID: " << emp.getEmployeeId() << endl;
+                    cout << "Employee Name: " << emp.getEmployeeName() << endl;
+                    cout << emp.getEmployeeSalary() << endl;
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Employee ID: 1001
+            Employee Name: Vijay
+            Salary: Rs.20000      
+        </pre>
+    </body>
+</html>

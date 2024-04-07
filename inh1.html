@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Animal with a method called makeSound(). Create a derived class called Cat that overrides the makeSound() method to bark:</h2>
+        <pre>
+            #include < iostream >
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    virtual void makeSound() {
+        cout << "Some generic sound" << endl;
+    }
+};
+
+// Derived class
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        cout << "Meow" << endl;
+    }
+};
+
+int main() {
+    // Creating an object of the derived class
+    Cat cat;
+    // Calling the overridden method
+    cat.makeSound();
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Some generic sound
+            Meow
+        </pre>
+    </body>
+</html>

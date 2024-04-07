@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Find Largest Number in an array:</h2>
+        <pre>
+            #include< iostream.h>
+                
+                int main(){
+                  int ar[]={3,8,57,86,55,76,56};
+                  int lrt=ar[0];
+                  cout<<"Array : "<< endl;
+                  int l=sizeof(ar)/sizeof(int);
+                  for(int i=0;i< l;i++){
+                    cout<< ar[i]<<" ";
+                  }
+                  for(int i=0;i< l;i++){
+                    if(lrt< ar[i]){
+                      lrt=ar[i];}
+                  }
+                  cout<< endl<<"Largest in an array : "<< lrt; 
+                  return 0;}
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Array : 
+          3 8 57 86 55 76 56 
+          Largest in an array : 86
+        </pre>
+    </body>
+</html>

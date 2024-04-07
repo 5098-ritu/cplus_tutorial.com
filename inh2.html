@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Vehicle with a method called drive(). Create a derived class called Car that overrides the drive() method to print "Repairing a car":</h2>
+        <pre>
+            #include < iostream >
+using namespace std;
+
+// Base class
+class Vehicle {
+public:
+    virtual void drive() {
+        cout << "Driving a vehicle" << endl;
+    }
+};
+
+// Derived class
+class Car : public Vehicle {
+public:
+    void drive() override {
+        cout << "Repairing a car" << endl;
+    }
+};
+
+int main() {
+    // Creating an object of the derived class
+    Car car;
+    // Calling the overridden method
+    car.drive();
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Reparing a car       
+        </pre>
+    </body>
+</html>

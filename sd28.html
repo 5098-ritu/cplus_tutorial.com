@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to test if an array contains a specific value:        </h2>
+        <pre>
+            #include< iostream.h>
+            
+                int main(){
+                  int ar[]={1,2,3,6,8,9,7,11};
+                  int n;
+                  cout<<"Array : "<< endl;
+                  int l=sizeof(ar)/sizeof(int);
+                  for(int i=0;i< l;i++){
+                    cout<< ar[i]<<" ";  
+                  }
+                  cout<< endl<<"Enter the element you want to check in array : ";
+                  cin>>n;
+                  int i;
+                  for(i=0;i< l;i++){
+                     if(ar[i]==n){
+                       cout<<"Element found in array ";
+                       break;
+                     }
+                  }
+                  if(i==l){
+                  cout<<"Element not found in array ";
+                  }  
+                  return 0;}
+
+        </pre>
+        <h2>Ouptut:</h2>
+        <pre>
+          Array : 
+          1 2 3 6 8 9 7 11
+          Enter the element you want to check in array : 9
+          Element found in array       
+        </pre>
+    </body>
+</html>

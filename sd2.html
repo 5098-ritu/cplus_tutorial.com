@@ -1,0 +1,52 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to find the frequency of each element in the array</h2>
+        <pre>
+            #include< iostream.h>
+
+                int check(int a[],int num,int s){
+                  for(int i=0;i< s;i++){
+                  if (a[i]==num){
+                    return 0;
+                  }
+                  }
+                  return 1;
+                }
+                int main(){
+                  int ar[10],rn[10],n,c=0,in=0;
+                  cout<<"Enter the no. of elements of array: ";
+                  cin>>n;
+                  cout<<"Enter the elements of arrays : "; 
+                  for(int i=0;i< n;i++){
+                    cin>>ar[i];
+                  }
+                  for(int i=0;i< n;i++){
+                    int c=0;
+                    for(int j=0;j< n;j++){
+                      if(ar[i]==ar[j]){
+                          c++;
+                      }
+                    }
+                    if(check(rn,ar[i],in)){
+                    rn[in]=ar[i];
+                    in++;
+                    cout<<"Frequency of "<< ar[i]<<" : "<< c<< endl;
+                  }}
+                  return 0;}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter the no. of elements of array: 4
+          Enter the elements of arrays : 23
+          43
+          54
+          65
+          Frequency of 23 : 1
+          Frequency of 43 : 1
+          Frequency of 54 : 1
+          Frequency of 65 : 1
+        </pre>
+    </body>
+</html>

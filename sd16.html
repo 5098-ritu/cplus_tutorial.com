@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to Find 3rd Largest Number in an array:</h2>
+        <pre>
+            #include< iostream.h>
+                
+                int main(){
+                  int ar[]={3,8,57,86,55,76,56};
+                  int lrt=ar[0],lrt2=lrt,lrt3=lrt;
+                  cout<<"Array : "<< endl;
+                  int l=sizeof(ar)/sizeof(int);
+                  for(int i=0;i< l;i++){
+                    cout<< ar[i]<<" ";
+                  }
+                  for(int i=0;i< l;i++){
+                    if(lrt< ar[i]){
+                      lrt2=lrt;
+                      lrt=ar[i];}
+                    if(lrt2< ar[i] && ar[i]< lrt){
+                      lrt3=lrt2;
+                      lrt2=ar[i];
+                      }
+                    if(lrt3< ar[i] && ar[i]< lrt2){
+                       lrt3=ar[i];
+                    }
+                  }
+                  cout<< endl<<"Third largest in an array : "<< lrt3; 
+                  return 0;}
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Array : 
+          3 8 57 86 55 76 56 
+          Third largest in an array : 57
+        </pre>
+    </body>
+</html>

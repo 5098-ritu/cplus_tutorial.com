@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Define a class Complex to represent complex numbers. Overload the + operator to add two complex numbers:</h2>
+        <pre>
+            #include< iostream.h>
+
+                class complex{
+                  int imag;
+                  int real;
+                  public:
+                  complex(int i,int r){
+                    real=r;
+                    imag=i;
+                  }
+                  complex(){
+                    real=0;
+                    imag=0;
+                  }
+                  complex operator +(complex &c){
+                     complex temp;
+                     temp.real=real+c.real;
+                     temp.imag=imag+c.imag;
+                  }
+                  void display(){
+                    cout<< real<<"+"<< imag<<"i"<< endl;
+                  }
+                };
+                int main(){
+                   complex c1(10,3),c2(5,4),c3;
+                   cout<<"Complex numbers : "<< endl;
+                   c1.display();
+                   c2.display();
+                   c3=c1+c2;
+                   cout<<"Sum of complex numbers by overloading '+' operator : ";
+                   c3.display();
+                   return 0;}
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+        Complex numbers : 
+        3+10i
+        4+5i
+        Sum of complex numbers by overloading '+' operator : 10+15i
+
+        </pre>
+    </body>
+</html>

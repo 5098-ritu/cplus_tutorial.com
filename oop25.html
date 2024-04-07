@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables:</h2>
+        <pre>
+            #include < iostream.h>
+                #include < string.h>
+            
+                class Person {
+                private:
+                    string name;
+                    int age;
+                    string country;
+                
+                public:
+                    void setter(string n, int a, string c) {
+                        name = n;
+                        age = a;
+                        country = c;
+                    }
+                    void getter() const {
+                        cout << "Name: " << name << ", Age: " << age << ", Country: " << country << endl;
+                    }
+                };
+                
+                int main() {
+                    Person person;
+                    person.setter("Jay",23, "India");
+                    cout << "Person Information: ";
+                    person.getter();
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Person Information: Name: Jay, Age: 23, Country: India        
+        </pre>
+    </body>
+</html>

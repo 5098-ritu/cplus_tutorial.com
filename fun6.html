@@ -1,0 +1,56 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method that accepts three integers and checks whether they are consecutive or not. Returns true or false:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                #include< stdlib.h>
+                
+                typedef enum{
+                    false=0,
+                    true=1
+                }bool;
+                bool areConsecutive(int num1,int num2,int num3)
+                {
+                    if(num2==num1+1 && num3==num2+1)
+                    {
+                        return true;
+                    }
+                     else if(num1==num2+1 && num2==num3+1)
+                     {
+                        return true;
+                     }else{
+                        return false;
+                     }
+                }
+                void main()
+                {
+                    int num1,num2,num3;
+                    clrscr();
+                    cout<<"Enter three integers: ";
+                    cin>>num1>>num2>>num3;
+                    if(areConsecutive(num1,num2,num3))
+                    {
+                        cout<<"The numbers are consecutive."<< endl;
+                    }
+                    else{
+                        cout<<"The numbers are not consecutive"<< endl;
+                    }
+                    getch();
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter three integers:
+            123
+            The numbers are consecutive.
+
+            Enter three integers:
+            435
+            The numbers are not consecutive
+            
+        </pre>
+    </body>
+</html>

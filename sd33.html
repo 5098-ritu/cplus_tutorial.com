@@ -1,0 +1,67 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to find the duplicate values of an array of integer values:</h2>
+        <pre>
+            #include< iostream.h>
+        
+                int check(int a[],int num,int s){
+                  for(int i=0;i< s;i++){
+                  if (a[i]==num){
+                    return 0;
+                  }
+                  }
+                  return 1;
+                }
+                int main(){
+                  int ar[10],n,in=0,da[10];
+                  cout<<"Enter the no. of elements of array: ";
+                  cin>>n;
+                  cout<<"Enter the elements of arrays : "; 
+                  for(int i=0;i< n;i++){
+                    cin>>ar[i];
+                  }
+                  for(int i=0;i< n;i++){
+                    int c=0;
+                    for(int j=0;j< n;j++){
+                       if(ar[i]==ar[j]){
+                       c++;
+                       }
+                    }
+                    if(c>1){
+                    if(check(da,ar[i],in)){
+                      da[in]=ar[i];
+                      in++;
+                    }
+                    }
+                  }
+                  if(in==0){
+                    cout<<"No duplicate elements found ";
+                  }
+                  else{
+                  cout<<"Duplicate elements of  array : "<< endl;
+                  for(int i=0;i< in;i++){
+                     cout<< da[i]<<" ";
+                  }}
+                  return 0;}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter the no. of elements of array: 4
+          Enter the elements of arrays : 32
+          45
+          21
+          39
+          No duplicate elements found 
+          
+          Enter the no. of elements of array: 4
+          Enter the elements of arrays : 34
+          21
+          34
+          56
+          Duplicate elements of  array : 
+          34         
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called "Airplane" with a flight number, destination, and departure time attributes, and methods to check flight status and delay:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< string.h>
+        
+                class Airplane{
+                   int fno;
+                   string destination;
+                   int dh,dm;
+                   int delay;
+                   public:
+                   Airplane(){
+                    delay=0;
+                    dh=0;
+                    dm=0;
+                   }
+                   void finfo(){
+                    cout<<"Enter flight no . : ";
+                    cin>>fno;
+                    cout<<"Destination : ";
+                    cin>>destination;
+                    cout<<"Enter the departure time in (24 hour clock ) (HH MM) ";
+                    cin>>dh>>dm;
+                   }
+                   void fstatus(int a,int b){
+                      if(a>dh || a==dh && b>dm){
+                        cout<<"Flight departed at "<< dh<<":"<< dm<<" to "<< destination<< endl;
+                      }
+                      else  if(delay==1){
+                        cout<<"Flight is delayed and will arrive at "<< dh<<":"<< dm<<" to "<< destination<< endl;
+                      }
+                      else{
+                        cout<<"Flight will arrive at "<< dh<<":"<< dm<<" to "<< destination<< endl;
+                      }
+                   }
+                   void fdelay(){
+                    cout<<"Enter the new departure time in (HH MM) : ";
+                    cin>>dh>>dm;
+                    delay=1;
+                   }
+                };
+                int main(){
+                Airplane f1;
+                f1.finfo();
+                int ch,cm;
+                cout<<"Enter the  time for refrence for flight status in (HH MM)(24 hour clock): ";
+                cin>>ch>>cm;
+                f1.fstatus(ch,cm);
+                f1.fdelay();
+                f1.fstatus(ch,cm);
+                return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+          Enter flight no . : 4356A
+          Destination : Enter the departure time in (24 hour clock ) (HH MM) 04 55
+          Enter the  time for refrence for flight status in (HH MM)(24 hour clock): 09 42
+          Flight departed at 4:55 to A
+          Enter the new departure time in (HH MM) : 05 00
+          Flight departed at 5:0 to A        
+        </pre>
+    </body>
+</html>

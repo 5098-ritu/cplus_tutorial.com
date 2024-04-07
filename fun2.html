@@ -1,0 +1,37 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to compute the average of three numbers.:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                
+                float computeAverage(float num1,float num2,float num3)
+                {
+                    return (num1+num2+num3)/3.0;
+                }
+                
+                int main()
+                {
+                    float num1,num2,num3;
+                    clrscr();
+                    cout<<"Enter three numbers: ";
+                    cin>>num1>>num2>>num3;
+                
+                    float average=computeAverage(num1,num2,num3);
+                    cout<<"The average is: "<< average<< endl;
+                    getch();
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter three numbers: 43
+            76
+            55
+            The average is: 58
+            
+        </pre>
+    </body>
+</html>

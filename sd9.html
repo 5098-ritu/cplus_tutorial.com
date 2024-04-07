@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to print the largest element in an array:</h2>
+        <pre>
+            #include< iostream.h>
+                
+                int main(){
+                  int ar[]={1,2,6,4,3,5},l,grt;
+                  l=sizeof(ar)/sizeof(int);
+                  grt=ar[0];
+                  for(int i=0;i< l;i++){
+                    if(grt< ar[i]){
+                      grt=ar[i];
+                  }}
+                  cout<<"Array : ";
+                  for(int i=0;i< l;i++){
+                     cout<< ar[i]<<"  ";
+                  }  
+                  cout<< endl<<"Largest element in an array : "<< grt;
+                  return 0;}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Array : 1  2  6  4  3  5  
+
+            Largest element in an array : 6
+        </pre>
+    </body>
+</html>

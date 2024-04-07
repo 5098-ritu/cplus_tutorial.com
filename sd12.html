@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Program to print the sum of all the items of the array:</h2>
+        <pre>
+            #include< iostream.h>
+    
+                int main(){
+                  int ar[]={6,2,1,4,3,5},l,s=0;
+                  l=sizeof(ar)/sizeof(int);
+                  cout<<"Array : ";
+                  for(int i=0;i< l;i++){
+                     cout<< ar[i]<<"  ";
+                  }  
+                 for(int i=0;i< l;i++){
+                     s=s+ar[i];
+                  }
+                  cout<< endl<<"Sum of all items in an array : "<< s;
+                  return 0;}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Array : 6  2  1  4  3  5  
+
+            Sum of all items in an array : 21
+        </pre>
+    </body>
+</html>

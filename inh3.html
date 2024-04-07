@@ -1,0 +1,45 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Shape with a method called getArea(). Create a derived class called Rectangle that overrides the getArea() method to calculate the area of a rectangle:</h2>
+        <pre>
+            #include < iostream >
+using namespace std;
+
+// Base class
+class Shape {
+public:
+    virtual double getArea() {
+        return 0;
+    }
+};
+
+// Derived class
+class Rectangle : public Shape {
+private:
+    double length;
+    double width;
+
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+
+    double getArea() override {
+        return length * width;
+    }
+};
+
+int main() {
+    // Creating an object of the derived class
+    Rectangle rectangle(5.0, 3.0);
+    // Calling the overridden method to get the area of the rectangle
+    cout << "Area of the rectangle: " << rectangle.getArea() << endl;
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Area of the rectangle:15       
+        </pre>
+    </body>
+</html>

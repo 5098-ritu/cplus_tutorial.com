@@ -1,0 +1,49 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method to compute the average of three numbers:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                #include< string.h>
+                
+                void middleCharacter(const char* str)
+                {
+                    int length=strlen(str);
+                
+                    if(length==0)
+                    {
+                        cout<<"Empty string"<< endl;
+                        return;
+                    }
+                    int middle=length/2;
+                
+                    if (length%2==0)
+                    {
+                        cout<<"Middle character: "<< str[middle-1]<< str[middle]<< endl;
+                    }
+                    else{
+                        cout<<"Middle character: "<< str[middle]<< endl;
+                    }
+                }
+                int main()
+                {
+                    char input[100];
+                    clrscr();
+                    cout<<"Enter a string: ";
+                    cin.getline(input,100);
+                    middleCharacter(input);
+                
+                    getch();
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string: ritu56
+
+            Middle character: tu
+        </pre>
+    </body>
+</html>

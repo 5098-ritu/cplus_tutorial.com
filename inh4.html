@@ -1,0 +1,74 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to create a class called Employee with methods called work() and getSalary(). Create a derived class called HRManager that overrides the work() method and adds a new method called addEmployee():</h2>
+        <pre>
+            #include < iostream >
+#include < string >
+#include < vector >
+using namespace std;
+
+// Base class
+class Employee {
+protected:
+    double salary;
+
+public:
+    Employee(double salary) : salary(salary) {}
+
+    void work() {
+        cout << "Employee is working." << endl;
+    }
+
+    double getSalary() {
+        return salary;
+    }
+};
+
+// Derived class
+class HRManager : public Employee {
+private:
+    vector<string> employees;
+
+public:
+    HRManager(double salary) : Employee(salary) {}
+
+    void work() override {
+        cout << "HR Manager is working." << endl;
+    }
+
+    void addEmployee(const string& employee) {
+        employees.push_back(employee);
+    }
+};
+
+int main() {
+    // Creating an object of the derived class
+    HRManager hr_manager(5000);
+    
+    // Calling the overridden method
+    hr_manager.work();
+
+    // Adding employees
+    hr_manager.addEmployee("John Doe");
+    hr_manager.addEmployee("Jane Smith");
+
+    // Displaying added employees
+    cout << "Employees added by HR Manager: ";
+    for (const string& emp : hr_manager.getEmployees()) {
+        cout << emp << ", ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            HR manager is working.
+            Employees added by HR
+            Manager:  johnDoe, jane Smith      
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ program to insert an element (specific position) into an array:</h2>
+        <pre>
+            #include< iostream.h>
+    
+                int main(){
+                  int ar[10]={1,2,3,6,8,9,7,11};
+                  cout<<"Array : "<< endl;
+                  int l=8;
+                  int n,p;
+                  for(int i=0;i< l;i++){
+                    cout<< ar[i]<<" ";  
+                  }
+                  cout<< endl<<"Enter the number you want to insert : ";
+                  cin>>n;
+                  cout<<"Enter the position : ";
+                  cin>>p;
+                  if(p>0 && p< l+1){
+                  for(int i=l;i>p-1;i--){
+                    ar[i]=ar[i-1];
+                  }  
+                  ar[p-1]=n;
+                  l++;
+                  cout<<"After insertion array : "<< endl;
+                  for(int i=0;i< l;i++){
+                    cout<< ar[i]<<" ";  
+                  }}
+                  else{
+                    cout<<"Invalid position for element ";
+                  }
+                  return 0;}
+                
+
+        </pre>
+        <h2>Ouptut:</h2>
+        <pre>
+          Array : 
+          1 2 3 6 8 9 7 11
+          Enter the number you want to insert : 7
+          Enter the position : 7
+          After insertion array :
+          1 2 3 6 8 9 7 7 11        
+        </pre>
+    </body>
+</html>

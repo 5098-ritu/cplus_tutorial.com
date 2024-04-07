@@ -1,0 +1,59 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Write a C++ method that checks whether all the characters in a given string are vowels (a,e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< string.h>
+                #include< stdlib.h>
+                #include< conio.h>
+                #include< ctype.h>
+                
+                typedef enum{
+                    false=0,true=1
+                    }bool;
+                bool areAllVowels(const char* str)
+                {
+                    int len=strlen(str);
+                    for(int i=0;i< len;i++)
+                    {
+                        char ch=tolower(str[i]);
+                        if(ch!='a' && ch!='e' && ch!= 'i' && ch!='o' && ch!='u')
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                int main()
+                {
+                    char input[100];
+                    clrscr();
+                    cout<<"Enter a string: ";
+                    cin.getline(input,sizeof(input));
+                    if(areAllVowels(input))
+                    {
+                        cout<<"All characters in the string are vowels."<< endl;
+                    }
+                    else{
+                        cout<<"Not all character in the string are vowels."<< endl;
+                    }
+                    getch();
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a string:
+            ritushah
+            Not all character in the string are vowels.
+
+            Enter a string:
+            aei  
+            All characters in the string are vowels.
+
+        </pre>
+    </body>
+</html>
