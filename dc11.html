@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to convert Binary to Decimal:</h2>
+        <pre>
+                #include< iostream.h>
+                #include< conio.h>
+                //function to convert binary to decimal
+                int binaryToDecimal(int n)
+                {
+                    int num=n;
+                    int dec_value=0;
+                
+                    //intializing base value to 1,i.e 2^0
+                    int base=1;
+                    int temp=num;
+                    while(temp)
+                    {
+                        int last_digit=temp%10;
+                        temp=temp/10;
+                
+                        dec_value+=last_digit*base;
+                        base=base*2;
+                    }
+                    return dec_value;
+                }
+                //main definition'
+                int main()
+                {
+                    int num;
+                    clrscr();
+                    cout<<"Enter binary no : ";
+                    cin>>num;
+                    cout<<"The equivalent decimal no to "<< num<<"is : ";
+                    cout<< binaryToDecimal(num)<< endl;
+                    getch();
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter binary no : 0110
+
+            The equivalent decimal no to 110is : 6
+        </pre>
+    </body>
+</html>

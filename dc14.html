@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to convert Decimal to hex:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                
+                int main()
+                {
+                    int num,temp,i=1,j,r;
+                    char hex[50];
+                    clrscr;
+                    cout<<"Enter a decimal no : ";
+                    cin>>num;
+                    temp=num;
+                    while(temp !=0)
+                    {
+                        r=temp%16;
+                        if(r< 10)
+                            hex[i++]=r+48;
+                        else
+                            hex[i++]=r+55;
+                        temp=temp/16;
+                    }
+                    cout<<"\nHexadecimal equivalent of "<< num<<" is :";
+                    for(j=1;j>0;j--)
+                        cout<< hex[j];
+                    getch();
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a decimal no : 13
+
+            Hexadecimal equivalent of 13 is :D
+        </pre>
+    </body>
+</html>

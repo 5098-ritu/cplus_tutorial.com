@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to convert long to String:</h2>
+        <pre>
+                #include< iostream.h>
+                #include< stdio.h>
+                #include< conio.h>
+                
+                int main()
+                {
+                    long num;
+                    clrscr();
+                    cout<<"Enter a long integer: ";
+                    cin>>num;
+                
+                    //convert long to string
+                    char str[20];
+                    sprintf(str,"%ld",num);
+                    cout<<"The string value is : "<< str<< endl;
+                    getch();
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a long integer: 453213
+
+            The string value is : 453213
+            
+        </pre>
+    </body>
+</html>

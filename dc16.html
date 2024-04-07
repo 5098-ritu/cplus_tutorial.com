@@ -1,0 +1,44 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to convert Decimal to Octal:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                //function to convert octal value of given decimal no
+                void decimalToOctal(int deciNum)
+                {
+                    int octalNum=0,countval=1;
+                    while(deciNum!=0)
+                    {
+                        //decimals remainder is calculated
+                        int remainder=deciNum%8;
+                        //storing the octal value
+                        octalNum+=remainder*countval;
+                        //storing exponential value
+                        countval=countval*10;
+                        deciNum/=8;
+                    }
+                    cout<< octalNum<< endl;
+                }
+                
+                int main()
+                {
+                    int n;
+                    clrscr();
+                    cout<<"Enter the value of n: ";
+                    cin>>n;
+                    decimalToOctal(n);
+                    getch();
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the octal value of n: 37
+
+            45
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to convert float to String:</h2>
+        <pre>
+                #include< iostream.h>
+                #include< conio.h>
+                #include< stdio.h>
+                
+                int main()
+                {
+                    float num;
+                    clrscr();
+                    cout<<"Enter a floating point number : ";
+                    cin>>num;
+                    //convert float to string
+                    char str[20];
+                    sprintf(str,"%2f",num);//%2f specifies two decimal places
+                    cout<<"The string value is : "<< str<< endl;
+                    getch();
+                    return 0;
+                }
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter a floating point number : 45.2316
+            The string value is : 45.231602
+            
+        </pre>
+    </body>
+</html>

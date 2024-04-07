@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to convert Octal to Decimal:</h2>
+        <pre>
+            #include< iostream.h>
+                #include< conio.h>
+                //function to convert octal to decimal
+                int octalToDecimal(int n)
+                {
+                    int num=n;
+                    int dec_value=0;
+                    //initializing base value to 1,i.e 8^0
+                    int base=1;
+                    int temp=num;
+                    while(temp)
+                    {
+                        //extracting last digit
+                        int last_digit=temp%10;
+                        temp=temp/10;
+                        /*Multiplying last digit with appropriate base value and
+                           adding it to dec_value*/
+                        dec_value+=last_digit*base;
+                        base=base*8;
+                    }
+                        return dec_value;
+                }
+                //main definition
+                int main()
+                {	int num;
+                    clrscr();
+                    cout<<"Enter the octal no: ";
+                    cin>>num;
+                    cout<<"the decimal value of no is :"<< octalToDecimal(num)<< endl;
+                    getch();
+                    return 0;
+                }
+                
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the octal no: 32
+
+            the decimal value of no is :26
+        </pre>
+    </body>
+</html>

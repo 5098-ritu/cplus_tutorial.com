@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <h2>C++ Program to convert double to string:</h2>
+        <pre>
+                #include< iostream.h>
+                #include< stdio.h>
+                #include< conio.h>
+                
+                int main()
+                {
+                    double num;
+                    clrscr();
+                    cout<<"Enter the double value : ";
+                    cin>>num;
+                    //convert double to string
+                    char str[20];
+                    sprintf(str,"%2f",num);//%2f specifies 2 decimal places
+                    cout<<"The string value is : "<< str<< endl;
+                    getch();
+                    return 0;
+                }   
+
+        </pre>
+        <h2>Output:</h2>
+        <pre>
+            Enter the double value : 34590
+
+            The string value is : 34590.000000
+            
+        </pre>
+    </body>
+</html>
